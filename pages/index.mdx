@@ -1,9 +1,201 @@
-import { Container } from 'theme-ui'
+import { Container, Box, Heading, Text, Grid, Card, Image, Button, Link } from 'theme-ui'
+import Meta from '../components/meta'
 
-<Container>
+<Meta 
+  title="Hack Club Butwal - Home"
+  description="Hack Club Butwal is a community of young coders and makers in Butwal, Nepal."
+/>
 
-# Hello!
+<Box
+  sx={{
+    bg: 'primary',
+    color: 'white',
+    py: [4, 5],
+    textAlign: 'center'
+  }}
+>
+  <Container>
+    <Heading
+      as="h1"
+      sx={{
+        fontSize: [5, 6, 7],
+        mb: 3
+      }}
+    >
+      Hack Club Butwal
+    </Heading>
+    <Text
+      sx={{
+        fontSize: [2, 3],
+        maxWidth: '650px',
+        mx: 'auto',
+        mb: 4
+      }}
+    >
+      A community of young coders and makers in Butwal, Nepal.
+    </Text>
+    <Button
+      as="a"
+      href="/contact"
+      sx={{
+        bg: 'tertiary',
+        color: 'white',
+        px: 4,
+        py: 3,
+        borderRadius: 'default',
+        fontWeight: 'bold',
+        fontSize: 2,
+        cursor: 'pointer',
+        transition: 'transform 0.2s ease-in-out',
+        '&:hover': {
+          transform: 'scale(1.05)'
+        }
+      }}
+    >
+      Join Us
+    </Button>
+  </Container>
+</Box>
 
-You’re using the [Hack Club Theme Starter](https://github.com/hackclub/theme-starter).
+<Container sx={{ py: [4, 5] }}>
+  <Heading
+    as="h2"
+    sx={{
+      textAlign: 'center',
+      mb: 4,
+      color: 'primary'
+    }}
+  >
+    What We Do
+  </Heading>
 
+  <Grid
+    gap={4}
+    columns={[1, null, 3]}
+    sx={{
+      mb: 5
+    }}
+  >
+    <Card
+      sx={{
+        p: 3,
+        borderRadius: 'default',
+        boxShadow: 'card',
+        transition: 'transform 0.2s ease-in-out',
+        '&:hover': {
+          transform: 'translateY(-5px)'
+        }
+      }}
+    >
+      <Heading as="h3" mb={2}>Workshops</Heading>
+      <Text>We organize regular coding workshops and hackathons to help students learn new skills and build projects.</Text>
+    </Card>
+
+    <Card
+      sx={{
+        p: 3,
+        borderRadius: 'default',
+        boxShadow: 'card',
+        transition: 'transform 0.2s ease-in-out',
+        '&:hover': {
+          transform: 'translateY(-5px)'
+        }
+      }}
+    >
+      <Heading as="h3" mb={2}>Community</Heading>
+      <Text>We build a supportive community of young coders who help each other learn and grow.</Text>
+    </Card>
+
+    <Card
+      sx={{
+        p: 3,
+        borderRadius: 'default',
+        boxShadow: 'card',
+        transition: 'transform 0.2s ease-in-out',
+        '&:hover': {
+          transform: 'translateY(-5px)'
+        }
+      }}
+    >
+      <Heading as="h3" mb={2}>Projects</Heading>
+      <Text>We work on real-world projects that solve problems and make a positive impact in our community.</Text>
+    </Card>
+  </Grid>
+
+  <Box
+    sx={{
+      textAlign: 'center',
+      mb: 5
+    }}
+  >
+    <Heading
+      as="h2"
+      sx={{
+        color: 'primary',
+        mb: 3
+      }}
+    >
+      Upcoming Events
+    </Heading>
+    <Text
+      sx={{
+        fontSize: 2,
+        mb: 4
+      }}
+    >
+      Join us for our upcoming workshops and hackathons!
+    </Text>
+    <Link
+      href="/gallery"
+      sx={{
+        color: 'tertiary',
+        fontWeight: 'bold',
+        textDecoration: 'none',
+        '&:hover': {
+          textDecoration: 'underline'
+        }
+      }}
+    >
+      View our gallery →
+    </Link>
+  </Box>
 </Container>
+
+<Box
+  sx={{
+    bg: 'tertiary',
+    color: 'white',
+    py: 4,
+    textAlign: 'center'
+  }}
+>
+  <Container>
+    <Heading as="h2" mb={3}>Join Hack Club Butwal</Heading>
+    <Text
+      sx={{
+        fontSize: 2,
+        maxWidth: '650px',
+        mx: 'auto',
+        mb: 4
+      }}
+    >
+      Ready to start coding and making with us? Join our community today!
+    </Text>
+    <Button
+      as="a"
+      href="/contact"
+      sx={{
+        bg: 'primary',
+        color: 'white',
+        px: 4,
+        py: 3,
+        borderRadius: 'default',
+        fontWeight: 'bold',
+        fontSize: 2,
+        cursor: 'pointer'
+      }}
+    >
+      Contact Us
+    </Button>
+  </Container>
+</Box>

@@ -22,7 +22,7 @@ A sample [Next.js] project for getting started with [MDX], [Theme UI], & [Hack C
 
 We’ve included an example theme switcher component at `components/color-switcher.js`,
 which is included on every page through its inclusion in `pages/_app.js`.
-Feel free to change it.
+Feel free to change it.         
 
 ### Hack Club fonts
 
