@@ -80,7 +80,9 @@ const Nav = () => {
             }}
           >
             <NavItem href="/">Home</NavItem>
-            <NavItem href="/gallery">Gallery</NavItem>
+            <NavItem href="/workshops">Workshops</NavItem>
+            <NavItem href="/community">Community</NavItem>
+            <NavItem href="/sponsors">Sponsors</NavItem>
             <NavItem href="/contact">Contact</NavItem>
           </Flex>
         </Flex>

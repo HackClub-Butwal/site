@@ -29,7 +29,7 @@ export default function Contact() {
     try {
       // Simulate API delay
       await new Promise(resolve => setTimeout(resolve, 1000));
-      
+
       // Simulate successful submission
       setSubmitted(true);
       setFormState({
@@ -253,30 +253,24 @@ export default function Contact() {
 
             <Box mt={4}>
               <Heading as="h3" mb={3}>Find Us</Heading>
-              {/* Embedded map - in a real implementation, you would use a proper map component */}
               <Box
                 sx={{
                   width: '100%',
                   height: '300px',
-                  bg: 'muted',
                   borderRadius: 'default',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center'
+                  overflow: 'hidden'
                 }}
               >
-                <Text>Map of Butwal, Nepal</Text>
-                {/* In a real implementation, you would use something like:
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56635.65236474339!2d83.41699465!3d27.6866236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3996864275d9755f%3A0x2b1e92d89d4bb3ae!2sButwal%2C%20Nepal!5e0!3m2!1sen!2sus!4v1652345678901!5m2!1sen!2sus"
                   width="100%"
                   height="100%"
-                  style={{ border: 0, borderRadius: '8px' }}
+                  style={{ border: 0 }}
                   allowFullScreen=""
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
+                  title="Map of Butwal, Nepal"
                 ></iframe>
-                */}
               </Box>
             </Box>
           </Box>
