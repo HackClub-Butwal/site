@@ -4,6 +4,7 @@ import { ThemeProvider } from 'theme-ui'
 import theme from '../lib/theme'
 import Script from 'next/script'
 import Head from 'next/head'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 export default function App({ Component, pageProps }) {
   return (
@@ -22,7 +23,7 @@ export default function App({ Component, pageProps }) {
         instagram="@HackClubButwal"
       />
       <Script
-        src="https://cdn.usefathom.com/script.js"
+        src="/scripts/fathom.js"
         data-site="NXBJA2"
         strategy="afterInteractive"
         crossOrigin="anonymous"
@@ -30,6 +31,7 @@ export default function App({ Component, pageProps }) {
       <ThemeProvider theme={theme}>
         <Component {...pageProps} />
       </ThemeProvider>
+      <SpeedInsights />
     </>
   )
 }
