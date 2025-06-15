@@ -1,5 +1,12 @@
-.now
-.next
-node_modules
+node_modules/
+.next/
+.env*
+dist/
 .DS_Store
-.env
+*.log
+.idea/
+.vscode/
+*.local
+*.swp
+coverage/
+

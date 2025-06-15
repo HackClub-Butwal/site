@@ -1,24 +1,33 @@
-import * as React from 'react'
-import NextApp from 'next/app'
+import Meta from '@hackclub/meta'
+import '@hackclub/theme/fonts/reg-bold.css'
+import { ThemeProvider } from 'theme-ui'
+import theme from '../lib/theme'
+import Script from 'next/script'
 import Head from 'next/head'
 
-import '@hackclub/theme/fonts/reg-bold.css'
-import theme from '../lib/theme'
-import { ThemeProvider } from 'theme-ui'
-import ColorSwitcher from '../components/color-switcher'
-import Nav from '../components/nav'
-import Footer from '../components/footer'
-
-export default class App extends NextApp {
-  render() {
-    const { Component, pageProps } = this.props
-    return (
+export default function App({ Component, pageProps }) {
+  return (
+    <>
+      <Head>
+        <link rel="icon" href="/assets/logo/red_logo/hackclubbutwal.svg" />
+      </Head>
+      <Meta
+        name="HackClub Butwal"
+        title="HackClub Butwal – Club Lead by Students for Students"
+        description="Join HackClub Butwal,We host hands-on workshops, tech events, seminars, and maybe hackathons too if we get the love and support!"
+        color="#ec3750"
+        image="/assets/logo/red_logo/hackclubbutwal.svg"
+        url="https://butwal.hackclub.com"
+        instagram="@HackClubButwal"
+      />
+      <Script
+        src="https://cdn.usefathom.com/script.js"
+        data-site="NXBJA2"
+        strategy="afterInteractive"
+      />
       <ThemeProvider theme={theme}>
-        <ColorSwitcher />
-        <Nav />
         <Component {...pageProps} />
-        <Footer />
       </ThemeProvider>
-    )
-  }
+    </>
+  )
 }

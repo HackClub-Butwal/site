@@ -1,3 +1,8 @@
+# HackClub Butwal - Coming Soon
+
+This project is the placeholder for the official Hack Club Butwal website. Stay tuned for updates!
+
+---
 # Hack Club Theme Starter
 
 A sample [Next.js] project for getting started with [MDX], [Theme UI], & [Hack Club Theme].
@@ -22,7 +27,7 @@ A sample [Next.js] project for getting started with [MDX], [Theme UI], & [Hack C
 
 We’ve included an example theme switcher component at `components/color-switcher.js`,
 which is included on every page through its inclusion in `pages/_app.js`.
-Feel free to change it.         
+Feel free to change it.
 
 ### Hack Club fonts
 
