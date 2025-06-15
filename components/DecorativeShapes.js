@@ -23,7 +23,6 @@ export default function DecorativeShapes() {
         borderRadius: '50%',
         zIndex: 0,
         filter: `blur(${blur}px)`,
-        filter: `blur(${blur}px)`,
         animation: `float ${duration}s ease-in-out infinite`,
         animationDelay: `${delay}s`
       }
