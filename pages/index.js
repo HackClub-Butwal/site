@@ -1,5 +1,5 @@
-import Head from 'next/head'
 import { Box, Button, Container, Heading, Text, Flex } from 'theme-ui'
+import Head from 'next/head'
 import Image from 'next/image'
 import DecorativeShapes from '../components/DecorativeShapes'
 
@@ -12,7 +12,7 @@ export default function Home() {
       </Head>
       <Box sx={{
         minHeight: '100vh',
-        bg: 'linear-gradient(135deg, #181B2A 0%, #232946 100%)', // darker blue gradient
+        bg: 'linear-gradient(135deg, #181B2A 0%, #232946 100%)',
         color: 'white',
         display: 'flex',
         flexDirection: 'column',
@@ -23,10 +23,8 @@ export default function Home() {
         position: 'relative',
         overflow: 'hidden',
       }}>
-        {/* Decorative background shapes */}
         <DecorativeShapes />
 
-        {/* Main content */}
         <Box
           sx={{
             width: 160,
@@ -68,7 +66,7 @@ export default function Home() {
             zIndex: 1,
           }}
         >
-          Hack Club Butwal
+          HackClub Butwal
         </Heading>
         <Text
           sx={{

@@ -1,5 +1,5 @@
-import Meta from '@hackclub/meta'
 import '@hackclub/theme/fonts/reg-bold.css'
+import Meta from '@hackclub/meta'
 import { ThemeProvider } from 'theme-ui'
 import theme from '../lib/theme'
 import Script from 'next/script'
@@ -13,8 +13,8 @@ export default function App({ Component, pageProps }) {
       </Head>
       <Meta
         name="HackClub Butwal"
-        title="HackClub Butwal – Club Lead by Students for Students"
-        description="Join HackClub Butwal,We host hands-on workshops, tech events, seminars, and maybe hackathons too if we get the love and support!"
+        title="HackClub Butwal – Coming Soon"
+        description="Official Hack Club in Butwal, Nepal. Join us for coding, making, and community!"
         color="#ec3750"
         image="/assets/logo/red_logo/hackclubbutwal.svg"
         url="https://butwal.hackclub.com"
@@ -24,6 +24,7 @@ export default function App({ Component, pageProps }) {
         src="https://cdn.usefathom.com/script.js"
         data-site="NXBJA2"
         strategy="afterInteractive"
+        crossOrigin="anonymous"
       />
       <ThemeProvider theme={theme}>
         <Component {...pageProps} />
