@@ -23,16 +23,10 @@ export default function DecorativeShapes() {
         borderRadius: '50%',
         zIndex: 0,
         filter: `blur(${blur}px)`,
-        animation: `float ${duration}s ease-in-out infinite ${delay}s`
-      }
-    })
-  }, [])
-  return (
-    <>
       {shapes.map((sx, i) => (
         <Box as="span" key={i} sx={sx} />
       ))}
-      <style jsx>{`
+      <style jsx global>{`
         @keyframes float {
           0%,100% { transform: translateY(0); }
           50% { transform: translateY(-20px); }
