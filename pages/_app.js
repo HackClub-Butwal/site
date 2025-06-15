@@ -12,6 +12,7 @@ export default function App({ Component, pageProps }) {
         <link rel="icon" href="/assets/logo/red_logo/hackclubbutwal.svg" />
       </Head>
       <Meta
+        as={Head}
         name="HackClub Butwal"
         title="HackClub Butwal – Coming Soon"
         description="Official Hack Club in Butwal, Nepal. Join us for coding, making, and community!"
