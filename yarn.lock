@@ -230,7 +230,7 @@
   resolved "https://registry.yarnpkg.com/@hackclub/meta/-/meta-1.1.33.tgz#e3ee378781330f9c13a82667e12ebe5393090f4d"
   integrity sha512-03gvSNcjIy1c2kO0XW+uuxgPHALsPubqGivb2/9NBalGNH0FqnvRvWD5h+sPV6L6hpe+TbqYZG+Sq/e/vyT8wQ==
 
-"@hackclub/theme@0.3.3":
+"@hackclub/theme@^0.3.3":
   version "0.3.3"
   resolved "https://registry.yarnpkg.com/@hackclub/theme/-/theme-0.3.3.tgz#af4249519489459c0e6f9f50a9caab419495b92e"
   integrity sha512-+K7jVUArvpziophJCCGB6vlQ7uvsm6VQnUnhHSMnF22s681Wgv6M0w12lUJBOevTu3KtgJVCmYlY888uvdaLvQ==
@@ -813,6 +813,11 @@ lines-and-columns@^1.1.6:
   resolved "https://registry.yarnpkg.com/lines-and-columns/-/lines-and-columns-1.2.4.tgz#eca284f75d2965079309dc0ad9255abb2ebc1632"
   integrity sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==
 
+lodash@^4.17.21:
+  version "4.17.21"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
+  integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
+
 loose-envify@^1.1.0, loose-envify@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/loose-envify/-/loose-envify-1.4.0.tgz#71ee51fa7be4caec1a63839f7e682d8132d30caf"
@@ -927,6 +932,11 @@ react-page-visibility@^7.0.0:
   integrity sha512-d4Kq/8TtJSr8dQc8EJeAZcSKTrGzC5OPTm6UrMur9BnwP0fgTawI9+Nd+ZGB7vwCfn2yZS0qDF9DR3/QYTGazw==
   dependencies:
     prop-types "^15.7.2"
+
+react-relative-time@^0.0.9:
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/react-relative-time/-/react-relative-time-0.0.9.tgz#2fcbd7e9a74ee82ff0eac24bfbd26a7dc2998ccc"
+  integrity sha512-Vf59erCwSaJaYp/IhoEtq7dtt1y4YNDqNegmOY8sK2P6oHHe3sLOXjz9VTCr0yvL2Y7W6uwufrxU4jOX8fS/dA==
 
 react-ticker@^1.3.2:
   version "1.3.2"
@@ -1055,7 +1065,7 @@ supports-preserve-symlinks-flag@^1.0.0:
   resolved "https://registry.yarnpkg.com/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz#6eda4bd344a3c94aea376d4cc31bc77311039e09"
   integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
 
-theme-ui@0.17.2:
+theme-ui@^0.17.2:
   version "0.17.2"
   resolved "https://registry.yarnpkg.com/theme-ui/-/theme-ui-0.17.2.tgz#855d0fae449dd98086281e70e507160760d1c087"
   integrity sha512-BuyJ7lkgGzmI63YPA90WYB+X4LbJTMm+j1a/qxjdl7evhLKRZkEE4Xs3bv66g9T+fuqq2T2TMrcY0BMzpWkOtQ==

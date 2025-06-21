@@ -1,23 +1,51 @@
-import React from 'react';
+/** @jsxImportSource theme-ui */
+import { Box, Text } from 'theme-ui';
+import CarouselCards from './CarouselCards';
+import React, { useState } from 'react';
 import Ticker from 'react-ticker';
 import PageVisibility from 'react-page-visibility';
-import CarouselCards from './cards/CarouselCards';
 
 export default function Carousel({ cards }) {
-  const [pageIsVisible, setPageIsVisible] = React.useState(true);
+  let [speed, setSpeed] = useState(5);
+  const [pageIsVisible, setPageIsVisible] = useState(true);
+
+  const handleVisibilityChange = (isVisible) => {
+    setPageIsVisible(isVisible);
+  };
 
   return (
-    <PageVisibility onChange={setPageIsVisible}>
-      <Ticker move={pageIsVisible} speed={5}>
-        {() => (
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-            {cards.map((card, idx) => (
-              <CarouselCards key={idx} {...card} />
-            ))}
-          </div>
-        )}
-      </Ticker>
+    <PageVisibility onChange={handleVisibilityChange}>
+      {pageIsVisible && (
+        <Box sx={{ mt: 4, width: '100vw', maxWidth: '100vw', overflow: 'hidden', px: 0, mx: 0, position: 'relative', left: '50%', transform: 'translateX(-50%)' }}>
+          <Text
+            variant="eyebrow"
+            as="h4"
+            sx={{
+              fontSize: ['22px', 2, 3],
+              mt: [4, 4, 5],
+              maxWidth: 'layout',
+              width: '90vw',
+              margin: 'auto'
+            }}
+          >
+            Here are a few projects you could get involved in:
+          </Text>
+          <Ticker speed={speed} sx={{ overflowX: 'hidden', width: '100vw' }}>
+            {() => (
+              <Box
+                as="div"
+                sx={{ display: 'flex', py: [4, 5, 5], width: '100vw' }}
+                onMouseOver={() => setSpeed(2)}
+                onMouseOut={() => setSpeed(6)}
+              >
+                {cards.map((card, idx) => (
+                  <CarouselCards key={idx} {...card} />
+                ))}
+              </Box>
+            )}
+          </Ticker>
+        </Box>
+      )}
     </PageVisibility>
   );
 }
-

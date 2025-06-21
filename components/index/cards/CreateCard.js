@@ -1,6 +1,6 @@
 import React from 'react'
-import Card from '../../Card'
 import { Box, Heading, Text, Button, Image } from 'theme-ui'
+import Card from '../../Card'
 
 export default function CreateCard() {
   return (
@@ -33,4 +33,3 @@ export default function CreateCard() {
     </Card>
   )
 }
-

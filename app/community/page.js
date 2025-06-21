@@ -18,7 +18,7 @@ export default function CommunityPage() {
         setLoading(false)
       }
     }
-    fetchData()
+    void fetchData()
   }, [])
 
   return (
@@ -52,4 +52,3 @@ export default function CommunityPage() {
     </Box>
   )
 }
-

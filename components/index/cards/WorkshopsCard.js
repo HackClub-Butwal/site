@@ -1,9 +1,5 @@
-import CardModel from '../card-model'
-import { Box, Card, Flex, Grid, Heading, Image, Text } from 'theme-ui'
-import { useState } from 'react'
-import Buttons from '../button'
-
 /** @jsxImportSource theme-ui */
+import { Card, Box, Grid, Heading, Image, Text, Flex } from 'theme-ui'
 
 const WorkshopCard = ({
   slug,
@@ -57,45 +53,63 @@ const WorkshopCard = ({
   </Card>
 )
 
-export default function WorkshopsCard({ data, stars }) {
+export default function WorkshopsCard({ stars }) {
   return (
-    <CardModel
-      color="white"
+    <Card
       sx={{
         backgroundColor: 'elevated',
         background:
           'linear-gradient(32deg, rgba(51, 142, 218, 0.9) 0%, rgba(51, 214, 166, 0.9) 100%)',
-        height: 'fit-content'
+        height: 'fit-content',
+        color: 'white',
+        p: 4,
+        borderRadius: 'lg',
+        boxShadow: 'card',
+        mb: 4
       }}
-      github_link="https://github.com/hackclub/workshops"
-      stars={stars}
-      highlight="blue"
     >
-      <Text variant="title" as="h3" sx={{ fontSize: ['36px', 4, 5] }}>
+      <Text as="h3" sx={{ fontSize: ['36px', 4, 5], mb: 3 }}>
         Workshops
       </Text>
       <Grid columns={[1, 2, 2]} sx={{ gap: 4, height: 'fit-content' }}>
         <Flex sx={{ flexDirection: 'column', height: 'fit-content' }}>
-          <Text as="p" variant="subtitle">
+          <Text as="p" sx={{ mb: 3 }}>
             100+ community-contributed, self-guided coding tutorials and ideas.
             Learn to code by building, one project at a time.
           </Text>
-          <Buttons
-            id="14"
-            link="https://workshops.hackclub.com"
-            icon="code"
-            primary="white"
-            sx={{ color: 'blue', mt: [3, 3, 4] }}
-          >
+          <Box as="a" href="https://workshops.hackclub.com" target="_blank" rel="noopener" sx={{
+            display: 'inline-block',
+            bg: 'white',
+            color: 'blue',
+            fontWeight: 'bold',
+            px: 4,
+            py: 2,
+            borderRadius: 'circle',
+            boxShadow: '0 2px 8px rgba(0,0,0,0.10)',
+            textDecoration: 'none',
+            mb: 2,
+            textAlign: 'center',
+            transition: 'all 0.2s',
+            ':hover': { bg: 'muted', color: 'primary' }
+          }}>
             Browse The Workshops
-          </Buttons>
-          <Buttons
-            id="13"
-            link="https://workshops.hackclub.com/submit-a-workshop/"
-            icon="event-add"
-          >
+          </Box>
+          <Box as="a" href="https://workshops.hackclub.com/submit-a-workshop/" target="_blank" rel="noopener" sx={{
+            display: 'inline-block',
+            bg: 'white',
+            color: 'blue',
+            fontWeight: 'bold',
+            px: 4,
+            py: 2,
+            borderRadius: 'circle',
+            boxShadow: '0 2px 8px rgba(0,0,0,0.10)',
+            textDecoration: 'none',
+            textAlign: 'center',
+            transition: 'all 0.2s',
+            ':hover': { bg: 'muted', color: 'primary' }
+          }}>
             Build A Workshop
-          </Buttons>
+          </Box>
         </Flex>
         <Grid sx={{ display: ['none', 'grid', 'grid'] }} columns={[1, 1, 1, 2]}>
           <WorkshopCard
@@ -103,19 +117,18 @@ export default function WorkshopsCard({ data, stars }) {
             slug="splatter_paint"
             name="Splatter Paint"
             description="Crazy colorful splatter paint in your browser with Paper.js"
-            img="/home/workshops/splatter_paint.png"
+            img="/assets/logo/blue_logo/Group 336.svg"
           />
           <WorkshopCard
             key="particle_physics"
             slug="particle_physics"
             name="Particle Physics"
             description="Create a particle physics simulation and with p5.js"
-            img="/home/workshops/particle_physics.png"
+            img="/assets/logo/red_logo/hackclubbutwal.svg"
             sx={{ display: ['none', 'none', 'none', 'flex'] }}
           />
         </Grid>
       </Grid>
-    </CardModel>
+    </Card>
   )
 }
-

@@ -5,7 +5,7 @@ import theme from '../lib/theme'
 import Script from 'next/script'
 import Head from 'next/head'
 import { SpeedInsights } from '@vercel/speed-insights/next'
-import Navbar from '../components/Navbar'
+import BinNav from '../components/bin/nav'
 import Layout from '../components/Layout'
 import '../styles/global.css'
 
@@ -25,6 +25,10 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <style jsx global>{`
+        html, body {
+          overflow-x: hidden !important;
+          width: 100vw;
+        }
         @font-face {
           font-family: 'Phantom Sans';
           src: url('https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Regular.woff') format('woff'),
@@ -68,7 +72,7 @@ export default function App({ Component, pageProps }) {
       />
       <ThemeProvider theme={theme}>
         <Favicon />
-        <Navbar />
+        <BinNav />
         <Layout>
           <Component {...pageProps} />
         </Layout>

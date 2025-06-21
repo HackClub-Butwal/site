@@ -1,9 +1,13 @@
 import { useState, useEffect } from 'react'
 import { Flex, Box, NavLink, Heading, Container } from 'theme-ui'
 import Image from 'next/image'
-import ThemeToggle from './ThemeToggle'
-import HamburgerMenu from './HamburgerMenu'
+import ThemeToggle from '../ThemeToggle'
+import HamburgerMenu from '../HamburgerMenu'
 import { useRouter } from 'next/router'
+
+const LOGO_CLICK_KEY = 'bin_nav_logo_clicks';
+const MAGIC_TRIGGER = 9;
+const REVERSE_TRIGGER = 3;
 
 function NavLinkItem({ link, direction, onClick }) {
   return (
@@ -33,14 +37,14 @@ function NavLinkItem({ link, direction, onClick }) {
 }
 
 function NavLinks({ direction = 'row', onClick }) {
-  const links = [
-    { href: '/', label: 'Home' },
-    { href: '/workshops', label: 'Workshops' },
-    { href: '/community', label: 'Community' },
-    { href: '/sponsors', label: 'Sponsors' },
-    { href: '/gallery', label: 'Gallery' },
-    { href: '/contact', label: 'Contact' }
-  ]
+    const links = [
+        { href: '/', label: 'Home' },
+        { href: '/workshops', label: 'Workshops' },
+        { href: '/community', label: 'Community' },
+        { href: '/sponsors', label: 'Sponsors' },
+        { href: '/gallery', label: 'Gallery' },
+        { href: '/contact', label: 'Contact' }
+    ]
   return (
     <Flex
       as="nav"
@@ -59,7 +63,7 @@ function NavLinks({ direction = 'row', onClick }) {
   )
 }
 
-function Logo({ clicks, handleLogoClick, hovered, setHovered }) {
+function Logo({ clicks, handleLogoClick, hovered, setHovered, magicActive }) {
   return (
     <Flex sx={{ alignItems: 'center' }}>
       <Box
@@ -80,7 +84,7 @@ function Logo({ clicks, handleLogoClick, hovered, setHovered }) {
         }}
       >
         <Image
-          src={clicks < 9 ? '/assets/logo/red_logo/hackclubbutwal.svg' : '/assets/logo/red_logo/Group_337.png'}
+          src={magicActive ? '/assets/logo/blue_logo/Group 336.svg' : '/assets/logo/red_logo/hackclubbutwal.svg'}
           alt="Site logo"
           width={40}
           height={40}
@@ -88,24 +92,23 @@ function Logo({ clicks, handleLogoClick, hovered, setHovered }) {
       </Box>
       <Heading
         as="h2"
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
+        onClick={handleLogoClick}
         sx={{
           fontSize: 2,
           m: 0,
           transition: 'all 0.3s ease-in-out',
-          cursor: 'default',
+          cursor: 'pointer',
           display: ['none', 'block'],
           color: 'text'
         }}
       >
-        {hovered ? 'Butwal Hack' : 'HackClub Butwal'}
+        {magicActive ? 'Butwal Hacks' : 'HackClub Butwal'}
       </Heading>
     </Flex>
   )
 }
 
-function DesktopNav() {
+function DesktopNav({ magicActive }) {
   return (
     <Flex sx={{ display: ['none', 'none', 'flex'], alignItems: 'center', gap: 3 }}>
       <NavLinks direction="row" />
@@ -113,7 +116,6 @@ function DesktopNav() {
     </Flex>
   )
 }
-
 function MobileNav({ isMenuOpen, toggleMenu }) {
   return (
     <Flex sx={{ alignItems: 'center', display: ['flex', 'flex', 'none'] }}>
@@ -122,7 +124,6 @@ function MobileNav({ isMenuOpen, toggleMenu }) {
     </Flex>
   )
 }
-
 function MobileMenu({ isMenuOpen, onClose }) {
   return (
     <Box
@@ -145,26 +146,60 @@ function MobileMenu({ isMenuOpen, onClose }) {
     </Box>
   )
 }
-
-export default function Navbar() {
+export default function BinNav() {
   const [clicks, setClicks] = useState(0)
   const [hovered, setHovered] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const [magicActive, setMagicActive] = useState(false)
   const router = useRouter()
 
-  const handleLogoClick = () => setClicks(prev => prev + 1)
+  useEffect(() => {
+    // Load click count from localStorage
+    const stored = parseInt(localStorage.getItem(LOGO_CLICK_KEY) || '0', 10)
+    setClicks(stored)
+    setMagicActive(stored >= MAGIC_TRIGGER)
+  }, [])
+
+  useEffect(() => {
+    // Save click count to localStorage
+    localStorage.setItem(LOGO_CLICK_KEY, clicks)
+    setMagicActive(clicks >= MAGIC_TRIGGER)
+  }, [clicks])
+
+  const handleLogoClick = () => {
+    let newClicks = clicks + 1;
+    if (magicActive) {
+      // Count how many clicks since magic was triggered
+      const sinceMagic = newClicks - MAGIC_TRIGGER;
+      if (sinceMagic >= REVERSE_TRIGGER) {
+        // Reset magic
+        setClicks(0);
+        setMagicActive(false);
+        localStorage.setItem(LOGO_CLICK_KEY, '0');
+        router.reload();
+        return;
+      }
+      setClicks(newClicks);
+      localStorage.setItem(LOGO_CLICK_KEY, newClicks);
+      return;
+    }
+    setClicks(newClicks);
+    if (newClicks < MAGIC_TRIGGER) {
+      localStorage.setItem(LOGO_CLICK_KEY, newClicks);
+      router.reload();
+    }
+    // If magicActive, don't reload, just show magic
+  }
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
   const closeMenu = () => setIsMenuOpen(false)
 
-  // Close menu when route changes
   useEffect(() => {
     const handleRouteChange = () => setIsMenuOpen(false)
     router.events.on('routeChangeComplete', handleRouteChange)
     return () => router.events.off('routeChangeComplete', handleRouteChange)
   }, [router])
 
-  // Handle scroll for sticky navbar
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10)
@@ -202,8 +237,8 @@ export default function Navbar() {
             minHeight: 60
           }}
         >
-          <Logo clicks={clicks} handleLogoClick={handleLogoClick} hovered={hovered} setHovered={setHovered} />
-          <DesktopNav />
+          <Logo clicks={clicks} handleLogoClick={handleLogoClick} hovered={hovered} setHovered={setHovered} magicActive={magicActive} />
+          <DesktopNav magicActive={magicActive} />
           <MobileNav isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
         </Flex>
       </Container>

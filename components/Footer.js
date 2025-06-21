@@ -50,6 +50,7 @@ const FooterLinks = () => (
     <Heading as="h2" variant="subheadline" mb={3}>
       Hack&nbsp;Club
     </Heading>
+    {/*
     <NextLink href="/philosophy" passHref>
       <Link>Philosophy</Link>
     </NextLink>
@@ -60,14 +61,15 @@ const FooterLinks = () => (
       <Link>Jobs</Link>
     </NextLink>
     <NextLink href="/brand" passHref>
-      <Link>Branding</Link>
+      <Link>Brand</Link>
     </NextLink>
     <NextLink href="/press" passHref>
-      <Link>Press Inquiries</Link>
+      <Link>Press</Link>
     </NextLink>
     <NextLink href="/philanthropy" passHref>
-      <Link>Donate</Link>
+      <Link>Philanthropy</Link>
     </NextLink>
+    */}
   </Box>
 )
 
