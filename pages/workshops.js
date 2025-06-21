@@ -4,10 +4,66 @@ import { Container, Box, Heading, Text, Grid, Flex, Button, Spinner } from 'them
 import EventCard from '../components/EventCard'
 import { useEvents } from '../lib/airtable'
 
+function EventFilter({ allTags, filter, setFilter }) {
+  return (
+    <Flex
+      sx={{
+        mb: 4,
+        flexWrap: 'wrap',
+        justifyContent: 'center',
+        gap: 2
+      }}
+    >
+      <Button
+        variant={filter === 'all' ? 'primary' : 'outline'}
+        onClick={() => setFilter('all')}
+        sx={{ mb: 2 }}
+      >
+        All Events
+      </Button>
+      {allTags.map(tag => (
+        <Button
+          key={tag}
+          variant={filter === tag ? 'primary' : 'outline'}
+          onClick={() => setFilter(tag)}
+          sx={{ mb: 2 }}
+        >
+          {tag}
+        </Button>
+      ))}
+    </Flex>
+  )
+}
+
+function EventsGrid({ events }) {
+  return (
+    <Grid columns={[1, null, 2, 3]} gap={4}>
+      {events.map(event => (
+        <EventCard key={event.id} event={event} />
+      ))}
+    </Grid>
+  )
+}
+
+function EventsEmpty({ setFilter }) {
+  return (
+    <Box sx={{ textAlign: 'center', py: 4 }}>
+      <Text>No events found with the selected filter.</Text>
+      <Button
+        variant="outline"
+        onClick={() => setFilter('all')}
+        sx={{ mt: 3 }}
+      >
+        Show all events
+      </Button>
+    </Box>
+  )
+}
+
 export default function Workshops() {
   const { events, isLoading, error } = useEvents()
   const [filter, setFilter] = useState('all')
-  
+
   // Get unique tags from all events
   const allTags = events.reduce((tags, event) => {
     if (event.tags) {
@@ -19,7 +75,7 @@ export default function Workshops() {
     }
     return tags
   }, [])
-  
+
   // Filter events based on selected tag
   const filteredEvents = filter === 'all' 
     ? events 
@@ -31,8 +87,7 @@ export default function Workshops() {
         <title>Workshops & Events – HackClub Butwal</title>
         <meta name="description" content="Join our upcoming workshops and events at HackClub Butwal. Learn coding, design, and more!" />
       </Head>
-      
-      <Box 
+      <Box
         sx={{ 
           bg: 'primary', 
           color: 'white', 
@@ -55,37 +110,8 @@ export default function Workshops() {
           </Text>
         </Container>
       </Box>
-      
       <Container sx={{ py: [4, 5] }}>
-        {/* Filter buttons */}
-        <Flex 
-          sx={{ 
-            mb: 4, 
-            flexWrap: 'wrap',
-            justifyContent: 'center',
-            gap: 2
-          }}
-        >
-          <Button 
-            variant={filter === 'all' ? 'primary' : 'outline'}
-            onClick={() => setFilter('all')}
-            sx={{ mb: 2 }}
-          >
-            All Events
-          </Button>
-          
-          {allTags.map(tag => (
-            <Button
-              key={tag}
-              variant={filter === tag ? 'primary' : 'outline'}
-              onClick={() => setFilter(tag)}
-              sx={{ mb: 2 }}
-            >
-              {tag}
-            </Button>
-          ))}
-        </Flex>
-        
+        <EventFilter allTags={allTags} filter={filter} setFilter={setFilter} />
         {isLoading ? (
           <Flex sx={{ justifyContent: 'center', py: 5 }}>
             <Spinner />
@@ -96,24 +122,10 @@ export default function Workshops() {
             <Text>Showing fallback data instead.</Text>
           </Box>
         ) : filteredEvents.length === 0 ? (
-          <Box sx={{ textAlign: 'center', py: 4 }}>
-            <Text>No events found with the selected filter.</Text>
-            <Button 
-              variant="outline" 
-              onClick={() => setFilter('all')}
-              sx={{ mt: 3 }}
-            >
-              Show all events
-            </Button>
-          </Box>
+          <EventsEmpty setFilter={setFilter} />
         ) : (
           <>
-            <Grid columns={[1, null, 2, 3]} gap={4}>
-              {filteredEvents.map(event => (
-                <EventCard key={event.id} event={event} />
-              ))}
-            </Grid>
-            
+            <EventsGrid events={filteredEvents} />
             <Box sx={{ textAlign: 'center', mt: 5 }}>
               <Heading as="h2" sx={{ mb: 3, fontSize: 3 }}>Want to suggest a workshop?</Heading>
               <Text sx={{ mb: 3 }}>

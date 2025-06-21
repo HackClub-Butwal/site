@@ -3,9 +3,7 @@ import { Card, Heading, Text, Box, Link, Flex } from 'theme-ui'
 import Image from 'next/image'
 import { ExternalLink } from '@hackclub/icons'
 
-export default function SponsorCard({ sponsor }) {
-  const { name, description, logo, website, tier } = sponsor
-  
+function getTierStyle(tier) {
   // Define tier-specific styles
   const tierStyles = {
     Platinum: {
@@ -25,8 +23,12 @@ export default function SponsorCard({ sponsor }) {
       shadow: '0 8px 30px rgba(205, 127, 50, 0.3)'
     }
   }
-  
-  const style = tierStyles[tier] || tierStyles.Bronze
+  return tierStyles[tier] || tierStyles.Bronze
+}
+
+export default function SponsorCard({ sponsor }) {
+  const { name, description, logo, website, tier } = sponsor
+  const style = getTierStyle(tier)
 
   return (
     <Card
@@ -52,15 +54,13 @@ export default function SponsorCard({ sponsor }) {
             style={{ objectFit: 'contain' }}
           />
         </Box>
-        
         <Box>
           <Heading as="h3" sx={{ fontSize: 3, mb: 1 }}>
             {name}
           </Heading>
-          
-          <Text 
-            sx={{ 
-              fontSize: 1, 
+          <Text
+            sx={{
+              fontSize: 1,
               color: 'muted',
               display: 'inline-block',
               px: 2,
@@ -75,17 +75,15 @@ export default function SponsorCard({ sponsor }) {
           </Text>
         </Box>
       </Flex>
-      
       <Text sx={{ mb: 3, fontSize: 1 }}>
         {description}
       </Text>
-      
       {website && (
-        <Link 
-          href={website} 
-          target="_blank" 
+        <Link
+          href={website}
+          target="_blank"
           rel="noopener noreferrer"
-          sx={{ 
+          sx={{
             display: 'inline-flex',
             alignItems: 'center',
             color: 'primary',

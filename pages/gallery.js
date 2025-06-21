@@ -76,12 +76,106 @@ const containerVariants = {
   }
 }
 
+function GalleryFilter({ categories, activeCategory, setActiveCategory }) {
+  return (
+    <Flex
+      sx={{
+        mb: 4,
+        flexWrap: 'wrap',
+        justifyContent: 'center',
+        gap: 2
+      }}
+    >
+      {categories.map(category => (
+        <Button
+          key={category}
+          variant={activeCategory === category ? 'primary' : 'outline'}
+          onClick={() => setActiveCategory(category)}
+          sx={{ mb: 2 }}
+        >
+          {category}
+        </Button>
+      ))}
+    </Flex>
+  )
+}
+
+function GalleryGrid({ images }) {
+  if (images.length === 0) {
+    return null
+  }
+  return (
+    <motion.div
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+    >
+      <Grid columns={[1, 2, 3]} gap={4}>
+        {images.map(img => (
+          <motion.div key={img.id} variants={itemVariants}>
+            <Box
+              sx={{
+                borderRadius: 'default',
+                overflow: 'hidden',
+                boxShadow: 'card',
+                transition: 'transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out',
+                '&:hover': {
+                  transform: 'translateY(-5px)',
+                  boxShadow: 'elevated',
+                  '& .gallery-image': {
+                    transform: 'scale(1.05)'
+                  }
+                }
+              }}
+            >
+              <Box sx={{ position: 'relative', height: 250, overflow: 'hidden' }}>
+                <Image
+                  src={img.url}
+                  alt={img.caption}
+                  fill
+                  style={{
+                    objectFit: 'cover',
+                    transition: 'transform 0.5s ease-in-out'
+                  }}
+                  className="gallery-image"
+                />
+              </Box>
+              <Box sx={{ p: 3 }}>
+                <Heading as="h3" sx={{ fontSize: 2, mb: 1 }}>{img.caption}</Heading>
+                <Flex sx={{ justifyContent: 'space-between', alignItems: 'center' }}>
+                  <Text sx={{ fontSize: 1, color: 'primary' }}>{img.category}</Text>
+                  <Text sx={{ fontSize: 0, color: 'muted' }}>{img.date}</Text>
+                </Flex>
+              </Box>
+            </Box>
+          </motion.div>
+        ))}
+      </Grid>
+    </motion.div>
+  )
+}
+
+function GalleryEmpty({ setActiveCategory }) {
+  return (
+    <Box sx={{ textAlign: 'center', py: 4 }}>
+      <Text>No images found in this category.</Text>
+      <Button
+        variant="outline"
+        onClick={() => setActiveCategory('All')}
+        sx={{ mt: 3 }}
+      >
+        Show all images
+      </Button>
+    </Box>
+  )
+}
+
 export default function Gallery() {
   const [activeCategory, setActiveCategory] = useState('All')
 
   // Filter images based on selected category
-  const filteredImages = activeCategory === 'All' 
-    ? galleryImages 
+  const filteredImages = activeCategory === 'All'
+    ? galleryImages
     : galleryImages.filter(img => img.category === activeCategory)
 
   return (
@@ -91,18 +185,18 @@ export default function Gallery() {
         <meta name="description" content="Browse photos from our HackClub Butwal events, workshops, and team activities." />
       </Head>
 
-      <Box 
-        sx={{ 
-          bg: 'primary', 
-          color: 'white', 
+      <Box
+        sx={{
+          bg: 'primary',
+          color: 'white',
           py: [4, 5],
           textAlign: 'center'
         }}
       >
         <Container>
-          <Heading 
-            as="h1" 
-            sx={{ 
+          <Heading
+            as="h1"
+            sx={{
               fontSize: [4, 5, 6],
               mb: 3
             }}
@@ -116,86 +210,12 @@ export default function Gallery() {
       </Box>
 
       <Container sx={{ py: [4, 5] }}>
-        {/* Filter buttons */}
-        <Flex 
-          sx={{ 
-            mb: 4, 
-            flexWrap: 'wrap',
-            justifyContent: 'center',
-            gap: 2
-          }}
-        >
-          {categories.map(category => (
-            <Button
-              key={category}
-              variant={activeCategory === category ? 'primary' : 'outline'}
-              onClick={() => setActiveCategory(category)}
-              sx={{ mb: 2 }}
-            >
-              {category}
-            </Button>
-          ))}
-        </Flex>
+        <GalleryFilter categories={categories} activeCategory={activeCategory} setActiveCategory={setActiveCategory} />
 
         {filteredImages.length === 0 ? (
-          <Box sx={{ textAlign: 'center', py: 4 }}>
-            <Text>No images found in this category.</Text>
-            <Button 
-              variant="outline" 
-              onClick={() => setActiveCategory('All')}
-              sx={{ mt: 3 }}
-            >
-              Show all images
-            </Button>
-          </Box>
+          <GalleryEmpty setActiveCategory={setActiveCategory} />
         ) : (
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            <Grid columns={[1, 2, 3]} gap={4}>
-              {filteredImages.map(img => (
-                <motion.div key={img.id} variants={itemVariants}>
-                  <Box 
-                    sx={{ 
-                      borderRadius: 'default',
-                      overflow: 'hidden',
-                      boxShadow: 'card',
-                      transition: 'transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out',
-                      '&:hover': {
-                        transform: 'translateY(-5px)',
-                        boxShadow: 'elevated',
-                        '& .gallery-image': {
-                          transform: 'scale(1.05)'
-                        }
-                      }
-                    }}
-                  >
-                    <Box sx={{ position: 'relative', height: 250, overflow: 'hidden' }}>
-                      <Image
-                        src={img.url}
-                        alt={img.caption}
-                        fill
-                        style={{ 
-                          objectFit: 'cover',
-                          transition: 'transform 0.5s ease-in-out'
-                        }}
-                        className="gallery-image"
-                      />
-                    </Box>
-                    <Box sx={{ p: 3 }}>
-                      <Heading as="h3" sx={{ fontSize: 2, mb: 1 }}>{img.caption}</Heading>
-                      <Flex sx={{ justifyContent: 'space-between', alignItems: 'center' }}>
-                        <Text sx={{ fontSize: 1, color: 'primary' }}>{img.category}</Text>
-                        <Text sx={{ fontSize: 0, color: 'muted' }}>{img.date}</Text>
-                      </Flex>
-                    </Box>
-                  </Box>
-                </motion.div>
-              ))}
-            </Grid>
-          </motion.div>
+          <GalleryGrid images={filteredImages} />
         )}
 
         <Box sx={{ textAlign: 'center', mt: 5 }}>
