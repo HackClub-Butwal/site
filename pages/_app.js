@@ -6,6 +6,7 @@ import Script from 'next/script'
 import Head from 'next/head'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import Navbar from '../components/Navbar'
+import Layout from '../components/Layout'
 import '../styles/global.css'
 
 export default function App({ Component, pageProps }) {
@@ -68,7 +69,9 @@ export default function App({ Component, pageProps }) {
       <ThemeProvider theme={theme}>
         <Favicon />
         <Navbar />
-        <Component {...pageProps} />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </ThemeProvider>
       <SpeedInsights />
     </>

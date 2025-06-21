@@ -5,6 +5,32 @@ import ThemeToggle from './ThemeToggle'
 import HamburgerMenu from './HamburgerMenu'
 import { useRouter } from 'next/router'
 
+function NavLinkItem({ link, direction, onClick }) {
+  return (
+    <NavLink
+      key={link.href}
+      href={link.href}
+      sx={{
+        px: direction === 'row' ? 2 : 0,
+        py: direction === 'column' ? 3 : 0,
+        fontSize: direction === 'column' ? 3 : 'inherit',
+        width: direction === 'column' ? '100%' : 'auto',
+        textAlign: direction === 'column' ? 'center' : 'left',
+        borderRadius: direction === 'column' ? 'default' : 0,
+        transition: 'background 0.2s, color 0.2s',
+        '&:hover': {
+          bg: 'muted',
+          color: 'primary',
+          textDecoration: 'none'
+        }
+      }}
+      onClick={onClick}
+    >
+      {link.label}
+    </NavLink>
+  )
+}
+
 function NavLinks({ direction = 'row', onClick }) {
   const links = [
     { href: '/', label: 'Home' },
@@ -26,27 +52,7 @@ function NavLinks({ direction = 'row', onClick }) {
       }}
     >
       {links.map(link => (
-        <NavLink
-          key={link.href}
-          href={link.href}
-          sx={{
-            px: direction === 'row' ? 2 : 0,
-            py: direction === 'column' ? 3 : 0,
-            fontSize: direction === 'column' ? 3 : 'inherit',
-            width: direction === 'column' ? '100%' : 'auto',
-            textAlign: direction === 'column' ? 'center' : 'left',
-            borderRadius: direction === 'column' ? 'default' : 0,
-            transition: 'background 0.2s, color 0.2s',
-            '&:hover': {
-              bg: 'muted',
-              color: 'primary',
-              textDecoration: 'none'
-            }
-          }}
-          onClick={onClick}
-        >
-          {link.label}
-        </NavLink>
+        <NavLinkItem key={link.href} link={link} direction={direction} onClick={onClick} />
       ))}
     </Flex>
   )
@@ -99,9 +105,10 @@ function Logo({ clicks, handleLogoClick, hovered, setHovered }) {
 
 function DesktopNav() {
   return (
-    <Box sx={{ display: ['none', 'none', 'block'] }}>
+    <Flex sx={{ display: ['none', 'none', 'flex'], alignItems: 'center', gap: 3 }}>
       <NavLinks direction="row" />
-    </Box>
+      <ThemeToggle />
+    </Flex>
   )
 }
 
@@ -172,11 +179,15 @@ export default function Navbar() {
         top: 0,
         width: '100%',
         zIndex: 1000,
-        bg: isScrolled ? 'background' : 'transparent',
+        // Use a semi-transparent background for both modes
+        bg: isScrolled ? 'rgba(26,32,44,0.85)' : 'rgba(255,255,255,0.85)',
+        // Use theme-ui color mode for background
+        backgroundColor: theme => theme.colors.background,
         boxShadow: isScrolled ? '0 2px 10px rgba(0,0,0,0.1)' : 'none',
         transition: 'all 0.3s ease-in-out',
-        backdropFilter: isScrolled ? 'blur(10px)' : 'none',
-        borderBottom: isScrolled ? '1px solid #e0e6ed' : 'none',
+        backdropFilter: 'blur(10px)',
+        borderBottom: '1px solid',
+        borderColor: 'muted',
         minHeight: 60
       }}
     >
@@ -201,3 +212,5 @@ export default function Navbar() {
     </Box>
   )
 }
+
+

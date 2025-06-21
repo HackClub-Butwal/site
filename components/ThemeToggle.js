@@ -31,7 +31,7 @@ export default function ThemeToggle() {
       }}
       aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
     >
-      <Icon glyph={isDark ? 'sun' : 'moon'} size={24} is="svg" />
+      <Icon glyph={isDark ? 'flag' : 'flag-fill'} size={24} is="svg" />
     </Button>
   )
 }
