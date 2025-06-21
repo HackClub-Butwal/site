@@ -58,7 +58,7 @@ export default function App({ Component, pageProps }) {
         color={theme.colors.primary}
         image="/assets/logo/red_logo/hackclubbutwal.svg"
         url="https://butwal.hackclub.com"
-        instagram="@HackClubButwal"
+        instagram="@HCButwal"
       />
       <Script
         src="/scripts/fathom.js"
