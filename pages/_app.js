@@ -5,6 +5,7 @@ import theme from '../lib/theme'
 import Script from 'next/script'
 import Head from 'next/head'
 import { SpeedInsights } from '@vercel/speed-insights/next'
+import Navbar from '../components/Navbar'
 
 export default function App({ Component, pageProps }) {
   return (
@@ -29,6 +30,7 @@ export default function App({ Component, pageProps }) {
         crossOrigin="anonymous"
       />
       <ThemeProvider theme={theme}>
+        <Navbar />
         <Component {...pageProps} />
       </ThemeProvider>
       <SpeedInsights />

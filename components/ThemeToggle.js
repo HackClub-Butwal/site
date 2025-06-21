@@ -1,0 +1,37 @@
+import React from 'react'
+import { useColorMode, Button, Flex } from 'theme-ui'
+import { Moon, Sun } from '@hackclub/icons'
+
+export default function ThemeToggle() {
+  const [colorMode, setColorMode] = useColorMode()
+  const isDark = colorMode === 'dark'
+
+  const toggleColorMode = () => {
+    setColorMode(isDark ? 'light' : 'dark')
+  }
+
+  return (
+    <Button
+      onClick={toggleColorMode}
+      variant="outline"
+      sx={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        p: 1,
+        borderRadius: 'circle',
+        color: 'text',
+        bg: 'transparent',
+        border: 'none',
+        cursor: 'pointer',
+        '&:hover': {
+          bg: 'muted',
+          opacity: 0.8
+        }
+      }}
+      aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+    >
+      {isDark ? <Sun size={24} /> : <Moon size={24} />}
+    </Button>
+  )
+}

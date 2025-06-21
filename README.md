@@ -1,6 +1,118 @@
-# HackClub Butwal - Coming Soon
+# HackClub Butwal Website
 
-This project is the placeholder for the official Hack Club Butwal website. Stay tuned for updates!
+The official website for Hack Club Butwal, a community of young coders and makers in Butwal, Nepal.
+
+![HackClub Butwal Logo](/public/assets/logo/red_logo/hackclubbutwal.svg)
+
+## Features
+
+- **Responsive Design**: Fully responsive website that works on all devices
+- **Dark/Light Mode**: Theme toggle for better user experience
+- **Interactive UI**: Animations, hover effects, and a custom cursor
+- **Event Calendar**: Display upcoming workshops and events
+- **Team Profiles**: Showcase community members and their contributions
+- **Sponsors Showcase**: Display sponsors by tier with custom styling
+- **Gallery**: Filter and view photos from events and activities
+- **Contact Form**: Embedded Tally form with query parameter support
+- **Airtable Integration**: Data fetching from Airtable with fallback data
+
+## Pages
+
+- **Home**: Landing page with hero section and animated elements
+- **Workshops**: Upcoming events and workshops with filtering by tag
+- **Community**: Team members, mission statement, and testimonials
+- **Sponsors**: Sponsors grouped by tier with benefits information
+- **Gallery**: Photo gallery with category filtering
+- **Contact**: Contact form and other ways to reach the community
+
+## Tech Stack
+
+- **Next.js**: React framework for server-rendered applications
+- **Theme UI**: For styling and theming
+- **Airtable**: For content management (simulated with fallback data)
+- **Framer Motion**: For animations in the gallery
+- **Tally**: For embedded contact form
+
+## File Structure and Conventions
+
+This project follows standard Next.js conventions for file organization:
+
+- **Pages**: All route files are in the `pages/` directory with `.js` extension
+- **Components**: Reusable UI components are in the `components/` directory with `.js` extension
+- **Utilities**: Helper functions and hooks are in the `lib/` directory
+- **Public Assets**: Static files are in the `public/` directory
+
+For more detailed information about file extensions in Next.js projects, see [FILE_EXTENSIONS.md](./FILE_EXTENSIONS.md).
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v14 or later)
+- Yarn or npm
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/HackClub-Butwal/butwalhacks.git
+   cd butwalhacks
+   ```
+
+2. Install dependencies:
+   ```bash
+   yarn install
+   # or
+   npm install
+   ```
+
+3. Install additional dependencies:
+   ```bash
+   yarn add framer-motion
+   # or
+   npm install framer-motion
+   ```
+
+4. Run the development server:
+   ```bash
+   yarn dev
+   # or
+   npm run dev
+   ```
+
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## Airtable Integration
+
+The website is designed to fetch data from Airtable. Currently, it uses fallback data for demonstration purposes. To connect to your Airtable base:
+
+1. Create an Airtable base with the following tables:
+   - Events
+   - Team
+   - Sponsors
+
+2. Update the `lib/airtable.js` file with your Airtable API key and base ID.
+
+## Deployment
+
+The site can be deployed on Vercel:
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/git?s=https%3A%2F%2Fgithub.com%2FHackClub-Butwal%2Fbutwalhacks&repo-name=butwalhacks)
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgements
+
+- [Hack Club](https://hackclub.com) for the theme and inspiration
+- [Theme UI](https://theme-ui.com) for the styling system
+- [Next.js](https://nextjs.org) for the framework
+- [Tally](https://tally.so) for the form solution
 
 ---
 # Hack Club Theme Starter
