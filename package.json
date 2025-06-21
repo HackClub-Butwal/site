@@ -10,15 +10,15 @@
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@hackclub/banner": "^1.0.3",
-    "@hackclub/icons": "^2.0.0",
+    "@hackclub/icons": "0.0.15",
     "@hackclub/meta": "^1.1.33",
-    "@hackclub/theme": "^1.0.0",
+    "@hackclub/theme": "0.3.3",
     "@vercel/speed-insights": "^1.2.0",
     "framer-motion": "^10.16.4",
     "next": "^15.3.3",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "theme-ui": "^0.13.6"
+    "theme-ui": "0.17.2"
   }
 }

@@ -10,7 +10,6 @@ const hackClubLogo = (
     viewBox="0 0 40 40"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    sx={{ display: 'inline-block', verticalAlign: 'middle', mr: 2, color: 'primary' }}
   >
     <rect width="40" height="40" rx="8" fill="currentColor" />
     <path d="M13 27V13H27V27H13Z" fill="white" />
@@ -39,7 +38,9 @@ const Footer = () => (
     >
       <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: ['center', 'flex-start'], mb: 3 }}>
         <Link href="https://hackclub.com/" target="_blank" rel="noopener noreferrer" sx={{ display: 'inline-flex', alignItems: 'center', mr: 2 }}>
-          {hackClubLogo}
+          <span style={{ display: 'inline-block', verticalAlign: 'middle', marginRight: 8, color: 'var(--theme-ui-colors-primary, #ec3750)' }}>
+            {hackClubLogo}
+          </span>
           <Text as="span" sx={{ fontWeight: 'bold', color: 'text', ml: 2, fontSize: 2 }}>
             Hack Club
           </Text>
