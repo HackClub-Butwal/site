@@ -18,6 +18,7 @@ function NavLinkItem({ link, direction, onClick }) {
         textAlign: direction === 'column' ? 'center' : 'left',
         borderRadius: direction === 'column' ? 'default' : 0,
         transition: 'background 0.2s, color 0.2s',
+        color: 'text',
         '&:hover': {
           bg: 'muted',
           color: 'primary',
@@ -94,7 +95,8 @@ function Logo({ clicks, handleLogoClick, hovered, setHovered }) {
           m: 0,
           transition: 'all 0.3s ease-in-out',
           cursor: 'default',
-          display: ['none', 'block']
+          display: ['none', 'block'],
+          color: 'text'
         }}
       >
         {hovered ? 'Butwal Hack' : 'HackClub Butwal'}
@@ -179,10 +181,7 @@ export default function Navbar() {
         top: 0,
         width: '100%',
         zIndex: 1000,
-        // Use a semi-transparent background for both modes
-        bg: isScrolled ? 'rgba(26,32,44,0.85)' : 'rgba(255,255,255,0.85)',
-        // Use theme-ui color mode for background
-        backgroundColor: theme => theme.colors.background,
+        bg: 'background',
         boxShadow: isScrolled ? '0 2px 10px rgba(0,0,0,0.1)' : 'none',
         transition: 'all 0.3s ease-in-out',
         backdropFilter: 'blur(10px)',
@@ -212,5 +211,3 @@ export default function Navbar() {
     </Box>
   )
 }
-
-

@@ -55,7 +55,7 @@ export default function App({ Component, pageProps }) {
         name="HackClub Butwal"
         title="HackClub Butwal – Coming Soon"
         description="Official Hack Club in Butwal, Nepal. Join us for coding, making, and community!"
-        color="#ec3750"
+        color={theme.colors.primary}
         image="/assets/logo/red_logo/hackclubbutwal.svg"
         url="https://butwal.hackclub.com"
         instagram="@HackClubButwal"

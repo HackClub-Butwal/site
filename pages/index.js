@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import HeroSection from '../components/HeroSection'
+import Carousel from '../components/Carousel'
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
         <meta name="description" content="HackClub Butwal is launching soon. Stay tuned!" />
       </Head>
       <HeroSection />
+      <Carousel />
     </div>
   )
 }

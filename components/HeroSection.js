@@ -62,18 +62,18 @@ function HeroHeading() {
         mb: 3,
         letterSpacing: '-0.03em',
         fontWeight: 'bold',
-        color: 'white',
-        textShadow: '0 2px 16px #1E50A0',
+        color: 'text',
+        textShadow: theme => `0 2px 16px ${theme.colors.primary}`,
         textAlign: 'center',
         lineHeight: '1.2',
         position: 'relative',
         zIndex: 1,
         '@keyframes flicker': {
-          '0%': { opacity: 1, textShadow: '0 2px 16px #1E50A0' },
-          '25%': { opacity: 0.95, textShadow: '0 2px 12px #1E50A0' },
-          '50%': { opacity: 0.97, textShadow: '0 2px 18px #1E50A0' },
-          '75%': { opacity: 0.96, textShadow: '0 2px 14px #1E50A0' },
-          '100%': { opacity: 1, textShadow: '0 2px 16px #1E50A0' }
+          '0%': theme => ({ opacity: 1, textShadow: `0 2px 16px ${theme.colors.primary}` }),
+          '25%': theme => ({ opacity: 0.95, textShadow: `0 2px 12px ${theme.colors.primary}` }),
+          '50%': theme => ({ opacity: 0.97, textShadow: `0 2px 18px ${theme.colors.primary}` }),
+          '75%': theme => ({ opacity: 0.96, textShadow: `0 2px 14px ${theme.colors.primary}` }),
+          '100%': theme => ({ opacity: 1, textShadow: `0 2px 16px ${theme.colors.primary}` })
         },
         animation: 'flicker 7s ease-in-out infinite'
       }}
@@ -92,7 +92,7 @@ function Tagline() {
         opacity: 0.95,
         maxWidth: 600,
         mx: 'auto',
-        color: 'white',
+        color: 'text',
         textAlign: 'center',
         lineHeight: '1.5',
         position: 'relative',
@@ -115,7 +115,7 @@ function CTAButton() {
         rel="noopener noreferrer"
         sx={{
           bg: 'accent',
-          color: 'white',
+          color: 'text',
           fontWeight: 'bold',
           px: 4,
           py: 3,

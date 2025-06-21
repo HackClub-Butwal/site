@@ -10,9 +10,9 @@ const hackClubLogo = (
     viewBox="0 0 40 40"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    sx={{ display: 'inline-block', verticalAlign: 'middle', mr: 2 }}
+    sx={{ display: 'inline-block', verticalAlign: 'middle', mr: 2, color: 'primary' }}
   >
-    <rect width="40" height="40" rx="8" fill="#EC3750" />
+    <rect width="40" height="40" rx="8" fill="currentColor" />
     <path d="M13 27V13H27V27H13Z" fill="white" />
   </svg>
 );
@@ -20,7 +20,7 @@ const hackClubLogo = (
 const Footer = () => (
   <>
     <Banner
-      color="red"
+      color="text"
       style={{ borderRadius: 0 }}
       children="Join Hack Club Butwal on Discord! 🚀"
       href="https://discord.gg/your-invite-link"
@@ -28,8 +28,8 @@ const Footer = () => (
     <Box
       as="footer"
       sx={{
-        bg: 'dark',
-        color: 'white',
+        bg: ['background', 'dark'], // Use light background in light mode, dark in dark mode
+        color: ['text', 'white'],   // Use text color from theme
         py: 4,
         px: 3,
         textAlign: ['center', 'left'],
@@ -40,7 +40,7 @@ const Footer = () => (
       <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: ['center', 'flex-start'], mb: 3 }}>
         <Link href="https://hackclub.com/" target="_blank" rel="noopener noreferrer" sx={{ display: 'inline-flex', alignItems: 'center', mr: 2 }}>
           {hackClubLogo}
-          <Text as="span" sx={{ fontWeight: 'bold', color: 'white', ml: 2, fontSize: 2 }}>
+          <Text as="span" sx={{ fontWeight: 'bold', color: 'text', ml: 2, fontSize: 2 }}>
             Hack Club
           </Text>
         </Link>
@@ -57,7 +57,7 @@ const Footer = () => (
           target="_blank"
           rel="noopener noreferrer"
           sx={{
-            color: 'accent',
+            color: 'text',
             textDecoration: 'none',
             fontWeight: 'bold',
             mr: 3,
