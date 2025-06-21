@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { Box, Button, Heading, Text, Flex } from 'theme-ui'
 import Image from 'next/image'
-import DecorativeShapes from './DecorativeShapes'
+import DecorativeShapes from './Animation/DecorativeShapes'
 import dynamic from 'next/dynamic'
 
-const CustomCursor = dynamic(() => import('./CustomCursor'), { ssr: false })
+const CustomCursor = dynamic(() => import('./Animation/CustomCursor'), { ssr: false })
 
 function LogoCard() {
   return (

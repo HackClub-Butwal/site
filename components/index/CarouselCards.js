@@ -2,7 +2,6 @@
 import { Box, Card, Image, Link, Text } from 'theme-ui'
 import IconComponent from '../icon'
 import GitHub from './github'
-import HoverSparkles from '../sparkles/HoverSparkles'
 
 export default function CarouselCards({
   background,
@@ -39,101 +38,107 @@ function renderCard({
   link
 }) {
   return (
-    <HoverSparkles>
-      <Box
+    <Box sx={getBoxStyles()}>
+      <Link
         sx={{
-          position: 'relative',
-          display: 'inline-block',
-          transition: 'transform .125s ease-in-out, box-shadow .125s ease-in-out',
-          width: ['300px', '300px', '300px'], // Desktop width
-          height: ['220px', '220px', '220px'], // Desktop height
-          '@media (max-width: 600px)': {
-            width: '480px', // 300 * 1.6 for mobile
-            height: '352px', // 220 * 1.6 for mobile
-          },
-          '&:hover': { transform: 'scale(1.0625)' },
-          '.icon': {
-            transition: 'transform 0.25s ease-in-out, opacity 0.43s ease-in-out'
-          },
-          ':hover,:focus': {
-            '.icon': {
-              transform: 'translateX(28px) translateY(-28px)',
-              opacity: 0
-            }
-          }
+          textDecoration: 'none',
+          '&:hover': { cursor: 'pointer' },
+          '&:hover svg': { opacity: 0.5 }
         }}
+        href={link}
+        target="_blank"
+        rel="noopener"
       >
-        <Link
+        <Image
+          src={img}
+          alt="carousel card"
           sx={{
-            textDecoration: 'none',
-            '&:hover': { cursor: 'pointer' },
-            '&:hover svg': { opacity: 0.5 }
+            position: 'absolute',
+            top: ['-26px', '-30px', '-35px'],
+            left: ['10px', '12px', '15px'],
+            zIndex: 2,
+            width: ['42px', '50px', '58px'],
+            height: ['42px', '50px', '58px']
           }}
-          href={link}
-          target="_blank"
-          rel="noopener"
+        />
+        <Card
+          sx={{
+            mr: 3,
+            background,
+            position: 'relative',
+            color: 'white',
+            width: '100%', // Match Box width
+            minHeight: '180px',
+            padding: ['12px !important', '16px !important', '20px !important'],
+            paddingTop: [
+              '14px !important',
+              '20px !important',
+              '24px !important'
+            ],
+            height: '100%',
+            '@media (max-width: 600px)': {
+              minHeight: '288px', // 180 * 1.6 for mobile
+              fontSize: '1.1em',
+            },
+          }}
         >
-          <Image
-            src={img}
-            alt="carousel card"
+          <Text
+            as="h3"
+            sx={{ color: titleColor, fontSize: ['20px', '21px', '22px'] }}
+          >
+            {title}
+          </Text>
+          <Text
+            as="p"
+            sx={{ color: descriptionColor, fontSize: [1, '16px', '20px'] }}
+          >
+            {description}
+          </Text>
+          <IconComponent
+            glyph="external"
+            size={32}
+            color="#E9E9E9"
             sx={{
               position: 'absolute',
-              top: ['-26px', '-30px', '-35px'],
-              left: ['10px', '12px', '15px'],
-              zIndex: 2,
-              width: ['42px', '50px', '58px'],
-              height: ['42px', '50px', '58px']
+              top: 2,
+              right: 2,
+              opacity: 0.3,
+              fontSize: [1, '16px', '20px']
             }}
+            className="icon"
           />
-          <Card
-            sx={{
-              mr: 3,
-              background,
-              position: 'relative',
-              color: 'white',
-              width: '100%', // Match Box width
-              minHeight: '180px',
-              padding: ['12px !important', '16px !important', '20px !important'],
-              paddingTop: [
-                '14px !important',
-                '20px !important',
-                '24px !important'
-              ],
-              height: '100%',
-              '@media (max-width: 600px)': {
-                minHeight: '288px', // 180 * 1.6 for mobile
-                fontSize: '1.1em',
-              },
-            }}
-          >
-            <Text
-              as="h3"
-              sx={{ color: titleColor, fontSize: ['20px', '21px', '22px'] }}
-            >
-              {title}
-            </Text>
-            <Text
-              as="p"
-              sx={{ color: descriptionColor, fontSize: [1, '16px', '20px'] }}
-            >
-              {description}
-            </Text>
-            <IconComponent
-              glyph="external"
-              size={32}
-              color="#E9E9E9"
-              sx={{
-                position: 'absolute',
-                top: 2,
-                right: 2,
-                opacity: 0.3,
-                fontSize: [1, '16px', '20px']
-              }}
-              className="icon"
-            />
-          </Card>
-        </Link>
-      </Box>
-    </HoverSparkles>
-  )
+        </Card>
+      </Link>
+    </Box>
+  );
+}
+
+function getBoxStyles() {
+  return {
+    position: 'relative',
+    display: 'flex', // changed from 'inline-block' to 'flex' for layout
+    flexDirection: 'column',
+    alignItems: 'stretch',
+    justifyContent: 'flex-start',
+    transition: 'transform .125s ease-in-out, box-shadow .125s ease-in-out',
+    width: ['300px', '300px', '300px'],
+    height: ['220px', '220px', '220px'],
+    mx: [2, 3, 4], // add horizontal margin for spacing between cards
+    my: 2, // add vertical margin for spacing
+    '@media (max-width: 600px)': {
+      width: '480px',
+      height: '352px',
+      mx: 'auto', // center on mobile
+    },
+    '&:hover': { transform: 'scale(1.0625)' },
+    '.icon': {
+      transition: 'transform 0.25s ease-in-out, opacity 0.43s ease-in-out'
+    },
+    ':hover,:focus': {
+      '.icon': {
+        transform: 'translateX(28px) translateY(-28px)',
+        opacity: 0
+      }
+    }
+  };
 }

@@ -5,7 +5,7 @@ import { Box, Container, Flex, Link } from 'theme-ui'
 import theme from '../lib/theme'
 import Icon from './icon'
 import NextLink from 'next/link'
-import { Logo } from './Footer'
+import { Logo } from './bin/Footer'
 
 const rgbaBgColor = (props, opacity) =>
   `rgba(${props.bgColor[0]},${props.bgColor[1]},${props.bgColor[2]},${opacity})`

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Container } from 'theme-ui'
-import Footer from './Footer'
+import Footer from './bin/Footer'
 
 export default function Layout({ children }) {
   return (
