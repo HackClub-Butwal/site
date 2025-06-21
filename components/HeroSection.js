@@ -1,8 +1,10 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Box, Button, Heading, Text, Flex } from 'theme-ui'
 import Image from 'next/image'
 import DecorativeShapes from './DecorativeShapes'
-import CustomCursor from './CustomCursor'
+import dynamic from 'next/dynamic'
+
+const CustomCursor = dynamic(() => import('./CustomCursor'), { ssr: false })
 
 function LogoCard() {
   return (
@@ -140,6 +142,8 @@ function FooterText() {
 }
 
 export default function HeroSection() {
+  const [mounted, setMounted] = useState(false)
+  useEffect(() => { setMounted(true) }, [])
   // Add class to body to hide default cursor
   useEffect(() => {
     if (typeof document !== 'undefined') {
@@ -193,7 +197,7 @@ export default function HeroSection() {
           cursor: none !important;
         }
       `}</style>
-      <CustomCursor />
+      {mounted && <CustomCursor />}
       <DecorativeShapes />
       <LogoCard />
       <HeroHeading />

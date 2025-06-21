@@ -1,6 +1,6 @@
 import React from 'react'
-import { useColorMode, Button, Flex } from 'theme-ui'
-import { Moon, Sun } from '@hackclub/icons'
+import { useColorMode, Button } from 'theme-ui'
+import Icon from '@hackclub/icons'
 
 export default function ThemeToggle() {
   const [colorMode, setColorMode] = useColorMode()
@@ -31,7 +31,7 @@ export default function ThemeToggle() {
       }}
       aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
     >
-      {isDark ? <Sun size={24} /> : <Moon size={24} />}
+      <Icon glyph={isDark ? 'sun' : 'moon'} size={24} is="svg" />
     </Button>
   )
 }
