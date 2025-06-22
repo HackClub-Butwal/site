@@ -12,7 +12,7 @@ coverage/
 
 /components/ApiExample.js
 /pages/api-example.js
-/FILE_EXTENSIONS.md
+/.idea/FILE_EXTENSIONS.md
 /pages/api/hello.js
 /SUMMARY.md
 !/qodana.yaml
