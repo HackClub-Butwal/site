@@ -19,4 +19,4 @@ coverage/
 /qodana.sarif.json
 qodana.yaml
 /.lingma/
-
+.windsurfrules
