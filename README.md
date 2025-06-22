@@ -16,17 +16,16 @@ Start running the website on your computer:
 
     $ yarn dev
 
-
 The project now uses the following file extensions:
 
-| File Type         | Extensions Used | Location                  |
-| ----------------- | --------------- | ------------------------- |
-| **Pages**         | `.js`           | `pages/`                  |
-| **Components**    | `.js`           | `components/`             |
-| **API Routes**    | `.js`           | `pages/api/`              |
-| **Utilities**     | `.js`           | `lib/`                    |
-| **Config**        | `.json`         | Project root              |
-| **Static Assets** | Various         | `public/`                 |
+| File Type         | Extensions Used | Location      |
+| ----------------- | --------------- | ------------- |
+| **Pages**         | `.js`           | `pages/`      |
+| **Components**    | `.js`           | `components/` |
+| **API Routes**    | `.js`           | `pages/api/`  |
+| **Utilities**     | `.js`           | `lib/`        |
+| **Config**        | `.json`         | Project root  |
+| **Static Assets** | Various         | `public/`     |
 
 ## Consistency and Best Practices
 
@@ -36,9 +35,7 @@ The project follows Next.js best practices for file extensions:
 2. **Proper Organization**: Files are organized in appropriate directories based on their purpose
 3. **Clear Documentation**: File extension usage is now well-documented for future contributors
 
-
 And then open up your web browser and go to [localhost:3000](http://localhost:3000).
-
 
 Please note: There are a number of redirects and rewrites essential to the website's functionality, which you can see in [next.config.mjs](./next.config.mjs).
 
@@ -76,14 +73,14 @@ If there's a Hack Club or Hack Club community-led project (past or present) that
 
 ```json
 {
-    "background": "dark",
-    "titleColor": "white",
-    "descriptionColor": "white",
-    "title": "Hackers Wanted",
-    "description": "Our open love letter to hackers",
-    "img": "https://a.slack-edge.com/production-standard-emoji-assets/14.0/apple-large/1f4bb@2x.png",
-    "link": "/hackers-wanted"
-  }
+  "background": "dark",
+  "titleColor": "white",
+  "descriptionColor": "white",
+  "title": "Hackers Wanted",
+  "description": "Our open love letter to hackers",
+  "img": "https://a.slack-edge.com/production-standard-emoji-assets/14.0/apple-large/1f4bb@2x.png",
+  "link": "/hackers-wanted"
+}
 ```
 
 </details>

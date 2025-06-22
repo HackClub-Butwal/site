@@ -1,31 +1,32 @@
-import React, { useEffect, useState } from 'react'
-import styled from '@emotion/styled'
-import { css, keyframes } from '@emotion/react'
-import { Box, Container, Flex, Link } from 'theme-ui'
-import theme from '../lib/theme'
-import Icon from './icon'
-import NextLink from 'next/link'
-import { Logo } from './bin/Footer'
+import React, { useEffect, useState } from "react";
+import styled from "@emotion/styled";
+import { css, keyframes } from "@emotion/react";
+import { Box, Container, Flex, Link } from "theme-ui";
+import theme from "../lib/theme";
+import Icon from "./icon";
+import NextLink from "next/link";
+import { Logo } from "./bin/Footer";
 
 const rgbaBgColor = (props, opacity) =>
-  `rgba(${props.bgColor[0]},${props.bgColor[1]},${props.bgColor[2]},${opacity})`
+  `rgba(${props.bgColor[0]},${props.bgColor[1]},${props.bgColor[2]},${opacity})`;
 
-const fixed = props =>
+const fixed = (props) =>
   (props.scrolled || props.toggled || props.fixed) &&
   css`
     background-color: ${rgbaBgColor(props, 0.96875)};
     border-bottom: 1px solid rgba(48, 48, 48, 0.125);
     @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
       background-color: ${props.transparent
-        ? 'transparent'
+        ? "transparent"
         : rgbaBgColor(props, 0.75)};
       -webkit-backdrop-filter: saturate(180%) blur(20px);
       backdrop-filter: saturate(180%) blur(20px);
     }
-  `
+  `;
 
 const Root = styled(Box, {
-  shouldForwardProp: prop => !['bgColor', 'scrolled', 'toggled'].includes(prop)
+  shouldForwardProp: (prop) =>
+    !["bgColor", "scrolled", "toggled"].includes(prop),
 })`
   position: fixed;
   top: 0;
@@ -35,7 +36,7 @@ const Root = styled(Box, {
   @media print {
     display: none;
   }
-`
+`;
 
 export const Content = styled(Container)`
   display: flex;
@@ -43,27 +44,27 @@ export const Content = styled(Container)`
   justify-content: space-between;
   position: relative;
   z-index: 2;
-`
+`;
 
-const hoverColor = name =>
+const hoverColor = (name) =>
   ({
-    white: 'smoke',
-    smoke: 'muted',
-    muted: 'slate',
-    slate: 'black',
-    black: 'slate',
-    primary: 'error'
-  })[name] || 'black'
+    white: "smoke",
+    smoke: "muted",
+    muted: "slate",
+    slate: "black",
+    black: "slate",
+    primary: "error",
+  })[name] || "black";
 
 const slide = keyframes({
-  from: { transform: 'translateY(-25%)', opacity: 0 },
-  to: { transform: 'translateY(0)', opacity: 1 }
-})
+  from: { transform: "translateY(-25%)", opacity: 0 },
+  to: { transform: "translateY(0)", opacity: 1 },
+});
 
-const layout = props =>
+const layout = (props) =>
   props.isMobile
     ? css`
-        display: ${props.toggled ? 'flex' : 'none'};
+        display: ${props.toggled ? "flex" : "none"};
         flex-direction: column;
         overflow-y: auto;
         text-align: left;
@@ -72,7 +73,7 @@ const layout = props =>
           animation: ${slide} 0.25s ease-in;
         }
         a {
-          color: ${theme.colors[props.dark ? 'white' : 'black']} !important;
+          color: ${theme.colors[props.dark ? "white" : "black"]} !important;
           margin: 0 auto;
           height: 64px;
           font-weight: bold;
@@ -97,9 +98,9 @@ const layout = props =>
             color: ${theme.colors[hoverColor(props.color)]};
           }
         }
-      `
+      `;
 const NavBar = styled(Box, {
-  shouldForwardProp: prop => !['isMobile', 'toggled'].includes(prop)
+  shouldForwardProp: (prop) => !["isMobile", "toggled"].includes(prop),
 })`
   display: none;
   ${layout};
@@ -108,12 +109,12 @@ const NavBar = styled(Box, {
     padding: ${theme.space[3]}px;
     text-decoration: none;
     @media (min-width: 56em) {
-      color: ${props => theme.colors[props.color] || props.color};
+      color: ${(props) => theme.colors[props.color] || props.color};
     }
   }
-`
+`;
 
-const Navigation = props => (
+const Navigation = (props) => (
   <NavBar role="navigation" {...props}>
     <NextLink href="/" passHref>
       <Link>Home</Link>
@@ -137,7 +138,7 @@ const Navigation = props => (
       <Link>Contact</Link>
     </NextLink>
   </NavBar>
-)
+);
 
 const ToggleContainer = styled(Flex)`
   align-items: center;
@@ -150,58 +151,65 @@ const ToggleContainer = styled(Flex)`
   @media (min-width: 56em) {
     display: none;
   }
-`
+`;
 
 function computedColors(dark, color, scrolled, toggled) {
   const baseColor = dark
-    ? color || 'white'
-    : color === 'white' && scrolled
-      ? 'black'
-      : color
+    ? color || "white"
+    : color === "white" && scrolled
+      ? "black"
+      : color;
   const toggleColor = dark
-    ? color || 'snow'
-    : toggled || (color === 'white' && scrolled)
-      ? 'slate'
-      : color
-  return { baseColor, toggleColor }
+    ? color || "snow"
+    : toggled || (color === "white" && scrolled)
+      ? "slate"
+      : color;
+  return { baseColor, toggleColor };
 }
 
 function useHeaderState(unfixed) {
-  const [scrolled, setScrolled] = useState(false)
-  const [toggled, setToggled] = useState(false)
-  const [mobile, setMobile] = useState(false)
+  const [scrolled, setScrolled] = useState(false);
+  const [toggled, setToggled] = useState(false);
+  const [mobile, setMobile] = useState(false);
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       if (!unfixed) {
-        const onScroll = () => setScrolled(window.scrollY >= 16)
-        window.addEventListener('scroll', onScroll)
+        const onScroll = () => setScrolled(window.scrollY >= 16);
+        window.addEventListener("scroll", onScroll);
         // Clean up scroll event
-        return () => window.removeEventListener('scroll', onScroll)
+        return () => window.removeEventListener("scroll", onScroll);
       }
     }
-  }, [unfixed])
+  }, [unfixed]);
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const mobileQuery = window.matchMedia('(max-width: 48em)')
+    if (typeof window !== "undefined") {
+      const mobileQuery = window.matchMedia("(max-width: 48em)");
       const handleChange = () => {
-        setMobile(true)
-        setToggled(false)
-      }
-      mobileQuery.addEventListener('change', handleChange)
+        setMobile(true);
+        setToggled(false);
+      };
+      mobileQuery.addEventListener("change", handleChange);
       // Clean up mobile query event
-      return () => mobileQuery.removeEventListener('change', handleChange)
+      return () => mobileQuery.removeEventListener("change", handleChange);
     }
-  }, [])
+  }, []);
 
-  return { scrolled, toggled, setToggled, mobile }
+  return { scrolled, toggled, setToggled, mobile };
 }
 
 function LogoLink() {
   return (
     <NextLink href="/" passHref>
-      <Link sx={{ display: 'flex', alignItems: 'center', fontWeight: 'bold', fontSize: 3 }}>
+      <Link
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          fontWeight: "bold",
+          fontSize: 3,
+        }}
+      >
         <Logo style={{ height: 36, marginRight: 12 }} />
         Hack Club Butwal
       </Link>
@@ -223,21 +231,33 @@ function NavigationWrapper({ isMobile, toggled, baseColor, dark, mobile }) {
 }
 
 function HeaderNavigation({ baseColor, dark, mobile }) {
-  return <NavigationWrapper isMobile={false} baseColor={baseColor} dark={dark} mobile={mobile} />;
+  return (
+    <NavigationWrapper
+      isMobile={false}
+      baseColor={baseColor}
+      dark={dark}
+      mobile={mobile}
+    />
+  );
 }
 
 function HeaderToggle({ toggleColor, onToggle, toggled }) {
   return (
     <ToggleContainer color={toggleColor} onClick={onToggle}>
-      <Icon glyph={toggled ? 'view-close' : 'menu'} />
+      <Icon glyph={toggled ? "view-close" : "menu"} />
     </ToggleContainer>
   );
 }
 
 function Header({ unfixed, color, bgColor, dark, fixed, ...props }) {
-  const { scrolled, toggled, setToggled, mobile } = useHeaderState(unfixed)
-  const { baseColor, toggleColor } = computedColors(dark, color, scrolled, toggled)
-  const handleToggleMenu = () => setToggled(t => !t)
+  const { scrolled, toggled, setToggled, mobile } = useHeaderState(unfixed);
+  const { baseColor, toggleColor } = computedColors(
+    dark,
+    color,
+    scrolled,
+    toggled,
+  );
+  const handleToggleMenu = () => setToggled((t) => !t);
 
   return (
     <Root
@@ -252,25 +272,35 @@ function Header({ unfixed, color, bgColor, dark, fixed, ...props }) {
       <Content>
         <LogoLink />
         <HeaderNavigation baseColor={baseColor} dark={dark} mobile={mobile} />
-        <HeaderToggle toggleColor={toggleColor} onToggle={handleToggleMenu} toggled={toggled} />
+        <HeaderToggle
+          toggleColor={toggleColor}
+          onToggle={handleToggleMenu}
+          toggled={toggled}
+        />
       </Content>
-      <NavigationWrapper isMobile={true} toggled={toggled} baseColor={baseColor} dark={dark} mobile={mobile} />
+      <NavigationWrapper
+        isMobile={true}
+        toggled={toggled}
+        baseColor={baseColor}
+        dark={dark}
+        mobile={mobile}
+      />
     </Root>
-  )
+  );
 }
 
 Header.defaultProps = {
-  color: 'white'
-}
+  color: "white",
+};
 
-export default Header
+export default Header;
 
 function shouldReturnSlate(color, toggled, scrolled) {
-  return toggled || (color === 'white' && scrolled);
+  return toggled || (color === "white" && scrolled);
 }
 
 function getToggleColor(dark, color, toggled, scrolled) {
-  if (dark) return color || 'snow';
-  if (shouldReturnSlate(color, toggled, scrolled)) return 'slate';
+  if (dark) return color || "snow";
+  if (shouldReturnSlate(color, toggled, scrolled)) return "slate";
   return color;
 }

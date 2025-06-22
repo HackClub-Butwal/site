@@ -1,44 +1,46 @@
-import React, { useEffect, useState } from 'react'
-import { Box, Button, Heading, Text, Flex } from 'theme-ui'
-import Image from 'next/image'
-import DecorativeShapes from './Animation/DecorativeShapes'
-import dynamic from 'next/dynamic'
+import React, { useEffect, useState } from "react";
+import { Box, Button, Heading, Text, Flex } from "theme-ui";
+import Image from "next/image";
+import DecorativeShapes from "./Animation/DecorativeShapes";
+import dynamic from "next/dynamic";
 
-const CustomCursor = dynamic(() => import('./Animation/CustomCursor'), { ssr: false })
+const CustomCursor = dynamic(() => import("./Animation/CustomCursor"), {
+  ssr: false,
+});
 
 function LogoCard() {
   return (
     <Box
       sx={{
         width: 200,
-        maxWidth: '70vw',
+        maxWidth: "70vw",
         mb: 4,
         borderRadius: 32,
-        boxShadow: '0 8px 32px rgba(30,80,160,0.15)',
-        position: 'relative',
+        boxShadow: "0 8px 32px rgba(30,80,160,0.15)",
+        position: "relative",
         zIndex: 1,
-        overflow: 'hidden',
-        mx: 'auto',
-        transition: 'all 0.3s ease-in-out',
-        '@keyframes heartbeat': {
-          '0%': { transform: 'scale(1)' },
-          '14%': { transform: 'scale(1.1)' },
-          '28%': { transform: 'scale(1)' },
-          '42%': { transform: 'scale(1.1)' },
-          '70%': { transform: 'scale(1)' }
+        overflow: "hidden",
+        mx: "auto",
+        transition: "all 0.3s ease-in-out",
+        "@keyframes heartbeat": {
+          "0%": { transform: "scale(1)" },
+          "14%": { transform: "scale(1.1)" },
+          "28%": { transform: "scale(1)" },
+          "42%": { transform: "scale(1.1)" },
+          "70%": { transform: "scale(1)" },
         },
-        '@keyframes flicker': {
-          '0%': { opacity: 1 },
-          '25%': { opacity: 0.85 },
-          '50%': { opacity: 0.95 },
-          '75%': { opacity: 0.9 },
-          '100%': { opacity: 1 }
+        "@keyframes flicker": {
+          "0%": { opacity: 1 },
+          "25%": { opacity: 0.85 },
+          "50%": { opacity: 0.95 },
+          "75%": { opacity: 0.9 },
+          "100%": { opacity: 1 },
         },
-        animation: 'flicker 5s ease-in-out infinite',
-        '&:hover': {
-          animation: 'heartbeat 1.5s ease-in-out infinite',
-          boxShadow: '0 8px 32px rgba(231,91,37,0.3)'
-        }
+        animation: "flicker 5s ease-in-out infinite",
+        "&:hover": {
+          animation: "heartbeat 1.5s ease-in-out infinite",
+          boxShadow: "0 8px 32px rgba(231,91,37,0.3)",
+        },
       }}
     >
       <Image
@@ -46,11 +48,11 @@ function LogoCard() {
         alt="HackClub Butwal Logo"
         width={200}
         height={200}
-        style={{ width: '100%', height: 'auto' }}
+        style={{ width: "100%", height: "auto" }}
         priority
       />
     </Box>
-  )
+  );
 }
 
 function HeroHeading() {
@@ -60,27 +62,42 @@ function HeroHeading() {
       sx={{
         fontSize: [5, 6, 7],
         mb: 3,
-        letterSpacing: '-0.03em',
-        fontWeight: 'bold',
-        color: 'text',
-        textShadow: theme => `0 2px 16px ${theme.colors.primary}`,
-        textAlign: 'center',
-        lineHeight: '1.2',
-        position: 'relative',
+        letterSpacing: "-0.03em",
+        fontWeight: "bold",
+        color: "text",
+        textShadow: (theme) => `0 2px 16px ${theme.colors.primary}`,
+        textAlign: "center",
+        lineHeight: "1.2",
+        position: "relative",
         zIndex: 1,
-        '@keyframes flicker': {
-          '0%': theme => ({ opacity: 1, textShadow: `0 2px 16px ${theme.colors.primary}` }),
-          '25%': theme => ({ opacity: 0.95, textShadow: `0 2px 12px ${theme.colors.primary}` }),
-          '50%': theme => ({ opacity: 0.97, textShadow: `0 2px 18px ${theme.colors.primary}` }),
-          '75%': theme => ({ opacity: 0.96, textShadow: `0 2px 14px ${theme.colors.primary}` }),
-          '100%': theme => ({ opacity: 1, textShadow: `0 2px 16px ${theme.colors.primary}` })
+        "@keyframes flicker": {
+          "0%": (theme) => ({
+            opacity: 1,
+            textShadow: `0 2px 16px ${theme.colors.primary}`,
+          }),
+          "25%": (theme) => ({
+            opacity: 0.95,
+            textShadow: `0 2px 12px ${theme.colors.primary}`,
+          }),
+          "50%": (theme) => ({
+            opacity: 0.97,
+            textShadow: `0 2px 18px ${theme.colors.primary}`,
+          }),
+          "75%": (theme) => ({
+            opacity: 0.96,
+            textShadow: `0 2px 14px ${theme.colors.primary}`,
+          }),
+          "100%": (theme) => ({
+            opacity: 1,
+            textShadow: `0 2px 16px ${theme.colors.primary}`,
+          }),
         },
-        animation: 'flicker 7s ease-in-out infinite'
+        animation: "flicker 7s ease-in-out infinite",
       }}
     >
       HackClub Butwal
     </Heading>
-  )
+  );
 }
 
 function Tagline() {
@@ -91,102 +108,107 @@ function Tagline() {
         mb: 4,
         opacity: 0.95,
         maxWidth: 600,
-        mx: 'auto',
-        color: 'text',
-        textAlign: 'center',
-        lineHeight: '1.5',
-        position: 'relative',
-        zIndex: 1
+        mx: "auto",
+        color: "text",
+        textAlign: "center",
+        lineHeight: "1.5",
+        position: "relative",
+        zIndex: 1,
       }}
     >
-      We’re building something amazing for young coders and Techies in Butwal.<br />
+      We’re building something amazing for young coders and Techies in Butwal.
+      <br />
       Our website is launching soon. Stay tuned!
     </Text>
-  )
+  );
 }
 
 function CTAButton() {
   return (
-    <Flex sx={{ justifyContent: 'center', mb: 4, position: 'relative', zIndex: 1 }}>
+    <Flex
+      sx={{ justifyContent: "center", mb: 4, position: "relative", zIndex: 1 }}
+    >
       <Button
         as="a"
         href="https://github.com/HackClub-Butwal"
         target="_blank"
         rel="noopener noreferrer"
         sx={{
-          bg: 'accent',
-          color: 'text',
-          fontWeight: 'bold',
+          bg: "accent",
+          color: "text",
+          fontWeight: "bold",
           px: 4,
           py: 3,
-          borderRadius: 'circle',
+          borderRadius: "circle",
           fontSize: [2, 3],
-          boxShadow: '0 4px 12px rgba(0,0,0,0.12)',
-          transition: 'all 0.2s',
-          letterSpacing: '0.01em',
-          '&:hover': { bg: 'secondary', transform: 'scale(1.05)' }
+          boxShadow: "0 4px 12px rgba(0,0,0,0.12)",
+          transition: "all 0.2s",
+          letterSpacing: "0.01em",
+          "&:hover": { bg: "secondary", transform: "scale(1.05)" },
         }}
       >
         Visit our GitHub
       </Button>
     </Flex>
-  )
+  );
 }
 
 function FooterText() {
   return (
-    <Text sx={{ fontSize: 1, opacity: 0.7, position: 'relative', zIndex: 1 }}>
+    <Text sx={{ fontSize: 1, opacity: 0.7, position: "relative", zIndex: 1 }}>
       © {new Date().getFullYear()} HackClub Butwal
     </Text>
-  )
+  );
 }
 
 export default function HeroSection() {
-  const [mounted, setMounted] = useState(false)
-  useEffect(() => { setMounted(true) }, [])
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
   // Add class to body to hide default cursor
   useEffect(() => {
-    if (typeof document !== 'undefined') {
-      document.body.classList.add('custom-cursor')
+    if (typeof document !== "undefined") {
+      document.body.classList.add("custom-cursor");
 
       return () => {
-        document.body.classList.remove('custom-cursor')
-      }
+        document.body.classList.remove("custom-cursor");
+      };
     }
-  }, [])
+  }, []);
 
   return (
     <Box
       sx={{
-        minHeight: '100vh',
-        bg: 'linear-gradient(135deg, #181B2A 0%, #232946 100%)',
-        color: 'white',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        textAlign: 'center',
+        minHeight: "100vh",
+        bg: "linear-gradient(135deg, #181B2A 0%, #232946 100%)",
+        color: "white",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        textAlign: "center",
         px: 3,
-        position: 'relative',
-        overflow: 'hidden',
-        '@keyframes backgroundFlicker': {
-          '0%': { opacity: 1 },
-          '25%': { opacity: 0.9 },
-          '50%': { opacity: 0.95 },
-          '75%': { opacity: 0.92 },
-          '100%': { opacity: 1 }
+        position: "relative",
+        overflow: "hidden",
+        "@keyframes backgroundFlicker": {
+          "0%": { opacity: 1 },
+          "25%": { opacity: 0.9 },
+          "50%": { opacity: 0.95 },
+          "75%": { opacity: 0.92 },
+          "100%": { opacity: 1 },
         },
-        '&::before': {
+        "&::before": {
           content: '""',
-          position: 'absolute',
+          position: "absolute",
           top: 0,
           left: 0,
           right: 0,
           bottom: 0,
-          background: 'linear-gradient(135deg, #181B2A 0%, #232946 100%)',
-          animation: 'backgroundFlicker 8s ease-in-out infinite',
-          zIndex: 0
-        }
+          background: "linear-gradient(135deg, #181B2A 0%, #232946 100%)",
+          animation: "backgroundFlicker 8s ease-in-out infinite",
+          zIndex: 0,
+        },
       }}
     >
       <style jsx global>{`
@@ -205,5 +227,5 @@ export default function HeroSection() {
       <CTAButton />
       <FooterText />
     </Box>
-  )
+  );
 }

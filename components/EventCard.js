@@ -1,51 +1,51 @@
-import React from 'react'
-import { Card, Heading, Text, Flex, Box, Badge, Button } from 'theme-ui'
-import Image from 'next/image'
-import { formatDate } from '../lib/airtable'
-import { Calendar, MapPin } from '@hackclub/icons'
+import React from "react";
+import { Card, Heading, Text, Flex, Box, Badge, Button } from "theme-ui";
+import Image from "next/image";
+import { formatDate } from "../lib/airtable";
+import { Calendar, MapPin } from "@hackclub/icons";
 
 // Helper function for rendering date and location
 function renderDateAndLocation(date, location) {
   return (
     <>
-      <Flex sx={{ mb: 2, alignItems: 'center', color: 'muted' }}>
-        <Calendar size={16} style={{ marginRight: '8px' }} />
+      <Flex sx={{ mb: 2, alignItems: "center", color: "muted" }}>
+        <Calendar size={16} style={{ marginRight: "8px" }} />
         <Text sx={{ fontSize: 1 }}>{formatDate(date)}</Text>
       </Flex>
 
       {location && (
-        <Flex sx={{ mb: 2, alignItems: 'center', color: 'muted' }}>
-          <MapPin size={16} style={{ marginRight: '8px' }} />
+        <Flex sx={{ mb: 2, alignItems: "center", color: "muted" }}>
+          <MapPin size={16} style={{ marginRight: "8px" }} />
           <Text sx={{ fontSize: 1 }}>{location}</Text>
         </Flex>
       )}
     </>
-  )
+  );
 }
 
 export default function EventCard({ event }) {
-  const { title, date, description, tags, location, image } = event
+  const { title, date, description, tags, location, image } = event;
 
   return (
     <Card
       sx={{
         p: 0,
-        overflow: 'hidden',
-        borderRadius: 'default',
-        boxShadow: 'card',
-        transition: 'transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out',
-        '&:hover': {
-          transform: 'translateY(-5px)',
-          boxShadow: 'elevated'
-        }
+        overflow: "hidden",
+        borderRadius: "default",
+        boxShadow: "card",
+        transition: "transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out",
+        "&:hover": {
+          transform: "translateY(-5px)",
+          boxShadow: "elevated",
+        },
       }}
     >
-      <Box sx={{ position: 'relative', height: 200 }}>
+      <Box sx={{ position: "relative", height: 200 }}>
         <Image
-          src={image || '/assets/logo/red_logo/Group_337.png'}
+          src={image || "/assets/logo/red_logo/Group_337.png"}
           alt={title}
           fill
-          style={{ objectFit: 'cover' }}
+          style={{ objectFit: "cover" }}
         />
       </Box>
 
@@ -56,40 +56,43 @@ export default function EventCard({ event }) {
 
         {renderDateAndLocation(date, location)}
 
-        <Text sx={{ mb: 3, color: 'text', fontSize: 1 }}>
-          {description.length > 120 ? `${description.substring(0, 120)}...` : description}
+        <Text sx={{ mb: 3, color: "text", fontSize: 1 }}>
+          {description.length > 120
+            ? `${description.substring(0, 120)}...`
+            : description}
         </Text>
 
-        <Flex sx={{ mb: 3, flexWrap: 'wrap', gap: 2 }}>
-          {tags && tags.map(tag => (
-            <Badge
-              key={tag}
-              variant="outline"
-              sx={{
-                bg: 'muted',
-                color: 'background',
-                px: 2,
-                py: 1,
-                borderRadius: 'pill'
-              }}
-            >
-              {tag}
-            </Badge>
-          ))}
+        <Flex sx={{ mb: 3, flexWrap: "wrap", gap: 2 }}>
+          {tags &&
+            tags.map((tag) => (
+              <Badge
+                key={tag}
+                variant="outline"
+                sx={{
+                  bg: "muted",
+                  color: "background",
+                  px: 2,
+                  py: 1,
+                  borderRadius: "pill",
+                }}
+              >
+                {tag}
+              </Badge>
+            ))}
         </Flex>
 
         <Button
           sx={{
-            width: '100%',
-            bg: 'primary',
-            '&:hover': {
-              bg: 'secondary'
-            }
+            width: "100%",
+            bg: "primary",
+            "&:hover": {
+              bg: "secondary",
+            },
           }}
         >
           Join Event
         </Button>
       </Box>
     </Card>
-  )
+  );
 }

@@ -1,54 +1,64 @@
-import '@hackclub/theme/fonts/reg-bold.css'
-import Meta from '@hackclub/meta'
-import { ThemeProvider, useColorMode, Container } from 'theme-ui'
-import theme from '../lib/theme'
-import Script from 'next/script'
-import Head from 'next/head'
-import { SpeedInsights } from '@vercel/speed-insights/next'
-import BinNav from '../components/bin/nav'
-import Footer from '../components/bin/Footer'
-import '../styles/global.css'
+import "@hackclub/theme/fonts/reg-bold.css";
+import Meta from "@hackclub/meta";
+import { ThemeProvider, useColorMode, Container } from "theme-ui";
+import theme from "../lib/theme";
+import Script from "next/script";
+import Head from "next/head";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import BinNav from "../components/bin/nav";
+import Footer from "../components/bin/Footer";
+import "../styles/global.css";
 
 export default function App({ Component, pageProps }) {
   function Favicon() {
-    const [colorMode] = useColorMode()
+    const [colorMode] = useColorMode();
     const icon =
-      colorMode === 'dark'
-        ? '/assets/logo/blue_logo/Group_336.svg'
-        : '/assets/logo/red_logo/hackclubbutwal.svg'
+      colorMode === "dark"
+        ? "/assets/logo/blue_logo/Group_336.svg"
+        : "/assets/logo/red_logo/hackclubbutwal.svg";
     return (
       <Head>
         <link rel="icon" href={icon} />
       </Head>
-    )
+    );
   }
   return (
     <>
       <style jsx global>{`
-        html, body {
+        html,
+        body {
           overflow-x: hidden !important;
           width: 100vw;
         }
         @font-face {
-          font-family: 'Phantom Sans';
-          src: url('https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Regular.woff') format('woff'),
-               url('https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Regular.woff2') format('woff2');
+          font-family: "Phantom Sans";
+          src:
+            url("https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Regular.woff")
+              format("woff"),
+            url("https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Regular.woff2")
+              format("woff2");
           font-weight: normal;
           font-style: normal;
           font-display: swap;
         }
         @font-face {
-          font-family: 'Phantom Sans';
-          src: url('https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Italic.woff') format('woff'),
-               url('https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Italic.woff2') format('woff2');
+          font-family: "Phantom Sans";
+          src:
+            url("https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Italic.woff")
+              format("woff"),
+            url("https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Italic.woff2")
+              format("woff2");
           font-weight: normal;
           font-style: italic;
           font-display: swap;
         }
         @font-face {
-          font-family: 'Phantom Sans';
-          src: url('https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Bold.woff') format('woff'),
-               url('https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Bold.woff2') format('woff2');
+          font-family: "Phantom Sans";
+          src:
+            url("https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Bold.woff")
+              format("woff"),
+            url("https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Bold.woff2")
+              format("woff2");
           font-weight: bold;
           font-style: normal;
           font-display: swap;
@@ -80,5 +90,5 @@ export default function App({ Component, pageProps }) {
       </ThemeProvider>
       <SpeedInsights />
     </>
-  )
+  );
 }

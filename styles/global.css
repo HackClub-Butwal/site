@@ -79,10 +79,13 @@
     --radii-extra: 12px;
     --radii-ultra: 16px;
     --radii-circle: 99999px;
-    --shadow-text: 0 1px 2px rgba(0, 0, 0, 0.25), 0 2px 4px rgba(0, 0, 0, 0.125);
-    --shadow-small: 0 1px 2px rgba(0, 0, 0, 0.0625), 0 2px 4px rgba(0, 0, 0, 0.0625);
+    --shadow-text:
+      0 1px 2px rgba(0, 0, 0, 0.25), 0 2px 4px rgba(0, 0, 0, 0.125);
+    --shadow-small:
+      0 1px 2px rgba(0, 0, 0, 0.0625), 0 2px 4px rgba(0, 0, 0, 0.0625);
     --shadow-card: 0 4px 8px rgba(0, 0, 0, 0.125);
-    --shadow-elevated: 0 1px 2px rgba(0, 0, 0, 0.0625), 0 8px 12px rgba(0, 0, 0, 0.125);
+    --shadow-elevated:
+      0 1px 2px rgba(0, 0, 0, 0.0625), 0 8px 12px rgba(0, 0, 0, 0.125);
   }
 
   [data-theme="dark"] {
@@ -91,7 +94,14 @@
   }
 
   body {
-    font-family: "Phantom Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family:
+      "Phantom Sans",
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      sans-serif;
     line-height: var(--line-height-body);
     font-weight: var(--font-weight-body);
     margin: 0;
@@ -109,12 +119,13 @@
   }
 
   /* Prevent drag and selection on homepage */
-.no-drag-select, .no-drag-select * {
-  user-select: none !important;
-  -webkit-user-select: none !important;
-  -webkit-user-drag: none !important;
-  -webkit-touch-callout: none !important;
-}
+  .no-drag-select,
+  .no-drag-select * {
+    user-select: none !important;
+    -webkit-user-select: none !important;
+    -webkit-user-drag: none !important;
+    -webkit-touch-callout: none !important;
+  }
 
   /* Additional utility classes... */
 }
