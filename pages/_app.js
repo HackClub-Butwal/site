@@ -8,6 +8,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import BinNav from "../components/bin/nav";
 import Footer from "../components/bin/Footer";
 import "../styles/global.css";
+import { Analytics } from "@vercel/analytics/next";
 
 export default function App({ Component, pageProps }) {
   function Favicon() {
@@ -94,6 +95,7 @@ export default function App({ Component, pageProps }) {
         <Footer />
       </ThemeProvider>
       <SpeedInsights />
+      <Analytics />
     </>
   );
 }
