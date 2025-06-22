@@ -16,4 +16,5 @@ coverage/
 /pages/api/hello.js
 /SUMMARY.md
 !/qodana.yaml
-!/qodana.sarif.json
+/qodana.sarif.json
+qodana.yaml
