@@ -18,7 +18,7 @@ export default function CreateCard() {
     >
       <Box mb={3}>
         <Image
-          src="/assets/logo/red_logo/hackclubbutwal.svg"
+          src="/assets/logo/rlogo.svg"
           alt="Create a new card"
           sx={{ width: 72, height: 72, mx: "auto", mb: 2 }}
         />
@@ -59,7 +59,7 @@ export default function CreateCard() {
       </Box>
       <Box sx={{ position: "absolute", bottom: 16, right: 16, opacity: 0.15 }}>
         <Image
-          src="/assets/logo/red_logo/hackclubbutwal.svg"
+          src="/assets/logo/rlogo.svg"
           alt="Card background"
           sx={{ width: 96, height: 96 }}
         />

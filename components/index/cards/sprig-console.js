@@ -21,7 +21,20 @@ export default function SprigConsole({ stars, consoleCount }) {
                 }}
                 highlight="#427A43"
             >
-                {renderBackgroundImage()}
+                <Image
+                    src="https://sprig.hackclub.com/pcb.svg"
+                    sx={{
+                        objectFit: 'cover',
+                        position: 'absolute',
+                        width: '100%',
+                        height: '120%',
+                        ml: '-24px',
+                        opacity: '0.4',
+                        mt: '-24px',
+                        zIndex: 0
+                    }}
+                    alt="Printed circuit board"
+                />
                 <Image
                     src="https://cloud-8u6hh0ho9-hack-club-bot.vercel.app/0sprig_console.svg"
                     sx={{
@@ -106,23 +119,4 @@ export default function SprigConsole({ stars, consoleCount }) {
             </Tilt>
         </Box>
     )
-}
-
-function renderBackgroundImage() {
-    return (
-        <Image
-            src="https://sprig.hackclub.com/pcb.svg"
-            sx={{
-                objectFit: 'cover',
-                position: 'absolute',
-                width: '100%',
-                height: '120%',
-                ml: '-24px',
-                opacity: '0.4',
-                mt: '-24px',
-                zIndex: 0
-            }}
-            alt="Printed circuit board"
-        />
-    );
 }

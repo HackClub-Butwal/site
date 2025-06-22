@@ -28,7 +28,7 @@ export default function Custom404() {
         >
           <Box sx={{ position: "relative", width: 150, height: 150, mb: 4 }}>
             <Image
-              src="/assets/logo/red_logo/hackclubbutwal.svg"
+              src="/assets/logo/rlogo.svg"
               alt="HackClub Butwal Logo"
               fill
               style={{ objectFit: "contain" }}

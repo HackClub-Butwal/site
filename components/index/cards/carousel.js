@@ -4,7 +4,7 @@ const carousel = [
     title: "Hackathon",
     description:
       "Join our upcoming hackathon and collaborate with fellow coders!",
-    img: "/assets/logo/blue_logo/blogo.svg",
+    img: "/assets/logo/blogo.svg",
     link: "https://hackclub.com/",
     background: "linear-gradient(135deg, #1e50a0 0%, #ec3750 100%)",
     titleColor: "white",
@@ -13,7 +13,7 @@ const carousel = [
   {
     title: "Workshops",
     description: "Participate in hands-on workshops to learn new skills.",
-    img: "/assets/logo/red_logo/rlogo.svg",
+    img: "/assets/logo/rlogo.svg",
     link: "https://workshops.hackclub.com/",
     background: "linear-gradient(135deg, #ec3750 0%, #1e50a0 100%)",
     titleColor: "white",
@@ -22,7 +22,7 @@ const carousel = [
   {
     title: "Community",
     description: "Connect with our vibrant tech community in Butwal.",
-    img: "/assets/logo/red_logo/rclogo.jpg",
+    img: "/assets/logo/rclogo.jpg",
     link: "https://discord.gg/hackclub",
     background: "linear-gradient(135deg, #1e50a0 0%, #ec3750 100%)",
     titleColor: "white",

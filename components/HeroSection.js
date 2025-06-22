@@ -44,7 +44,7 @@ function LogoCard() {
       }}
     >
       <Image
-        src="/assets/logo/red_logo/hackclubbutwal.svg"
+        src="/assets/logo/rlogo.svg"
         alt="HackClub Butwal Logo"
         width={200}
         height={200}
