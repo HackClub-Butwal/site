@@ -90,7 +90,6 @@ export default function Workshops({ data, stars }) {
                         Browse The Workshops
                     </Buttons>
                     <Buttons
-                        // content="click to learn more about how to submit a workshop"
                         id="13"
                         link="https://workshops.hackclub.com/submit-a-workshop/"
                         icon="event-add"
@@ -104,14 +103,14 @@ export default function Workshops({ data, stars }) {
                         slug="splatter_paint"
                         name="Splatter Paint"
                         description="Crazy colorful splatter paint in your browser with Paper.js"
-                        img="/home/workshops/splatter_paint.png"
+                        img="/images/workshops/splatter_paint.png"
                     />
                     <WorkshopCard
                         key="particle_physics"
                         slug="particle_physics"
                         name="Particle Physics"
                         description="Create a particle physics simulation and with p5.js"
-                        img="/home/workshops/particle_physics.png"
+                        img="/images/workshops/particle_physics.png"
                         sx={{ display: ['none', 'none', 'none', 'flex'] }}
                     />
                 </Grid>

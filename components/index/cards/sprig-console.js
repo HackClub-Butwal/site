@@ -102,7 +102,7 @@ export default function SprigConsole({ stars, consoleCount }) {
             </CardModel>
             <Tilt>
                 <Image
-                    src="/home/sprig-console.webp"
+                    src="/images/sprig-console.webp"
                     sx={{
                         position: 'absolute',
                         right: ['', '-50%', '-35%', '-25%'],

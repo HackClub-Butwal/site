@@ -41,7 +41,7 @@ const Service = ({ href, icon, name = "", ...props }) => (
     target="_blank"
     rel="noopener me"
     href={href}
-    title={`Hack Club on ${name ? name : icon}`}
+    title={`HackClub Butwal on ${name ? name : icon}`}
     {...props}
   >
     <Icon glyph={icon} />
@@ -92,7 +92,7 @@ const FooterResources = () => (
 
 const FooterBranding = ({ email }) => (
   <Box sx={{ gridColumn: ["span 2", "span 1"] }}>
-    <Logo aria-label="Hack Club logo" width={128} height={45} />
+    <Logo aria-label="HackClub Butwal logo" width={128} height={45} />
     <Grid
       columns={[8, 4]}
       gap={2}
@@ -111,7 +111,11 @@ const FooterBranding = ({ email }) => (
         placeItems: "center",
       }}
     >
-      <Service href="/slack" icon="slack-fill" name="Slack" target="_self" />
+      <Service
+        href="https://facebook.com/messages/t/hackclub"
+        icon="messenger-fill"
+        name="Messenger"
+      />
       <Service
         href="https://twitter.com/hackclub"
         icon="twitter"
@@ -124,9 +128,9 @@ const FooterBranding = ({ email }) => (
         name="Figma"
       />
       <Service
-        href="https://social.dino.icu/@hackclub"
-        icon="mastodon"
-        name="Mastodon"
+        href="https://facebook.com/hackclub"
+        icon="facebook"
+        name="Facebook"
       />
       <Service
         href="https://www.youtube.com/c/HackClubHQ"
@@ -189,11 +193,13 @@ const Footer = ({
       >
         <FooterLinks />
         <FooterResources />
-        <FooterBranding email={email} />
+        <FooterBranding email={"hackclubbutwal@duck.com"} />
       </Grid>
       <Text as="p" variant="caption" sx={{ mt: 3 }}>
-        © {new Date().getFullYear()} Hack&nbsp;Club. 501(c)(3) nonprofit (EIN:
-        81-2908499)
+        © {new Date().getFullYear()} Hack&nbsp;Club. 501(c)(3) nonprofit (EIN:&nbsp;81-2908499)
+      </Text>
+      <Text as="p" variant="caption" sx={{ mt: 1 }}>
+        HackClub&nbsp;Butwal&nbsp;is&nbsp;fiscally&nbsp;sponsored&nbsp;by&nbsp;The&nbsp;Hack&nbsp;Foundation&nbsp;(d.b.a.&nbsp;Hack&nbsp;Club),&nbsp;a&nbsp;501(c)(3)&nbsp;nonprofit&nbsp;(EIN:&nbsp;81-2908499).
       </Text>
     </Container>
   </Base>

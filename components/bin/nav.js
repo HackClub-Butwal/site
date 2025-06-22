@@ -7,7 +7,7 @@ import { useRouter } from "next/router";
 
 const LOGO_CLICK_KEY = "bin_nav_logo_clicks";
 const MAGIC_TRIGGER = 9;
-const REVERSE_TRIGGER = 3;
+const REVERSE_TRIGGER = 1;
 
 function NavLinkItem({ link, direction, onClick }) {
   return (
@@ -181,18 +181,11 @@ export default function BinNav() {
   const handleLogoClick = () => {
     let newClicks = clicks + 1;
     if (magicActive) {
-      // Count how many clicks since magic was triggered
-      const sinceMagic = newClicks - MAGIC_TRIGGER;
-      if (sinceMagic >= REVERSE_TRIGGER) {
-        // Reset magic
-        setClicks(0);
-        setMagicActive(false);
-        localStorage.setItem(LOGO_CLICK_KEY, "0");
-        router.reload();
-        return;
-      }
-      setClicks(newClicks);
-      localStorage.setItem(LOGO_CLICK_KEY, newClicks);
+      // Reset magic on first click after activation
+      setClicks(0);
+      setMagicActive(false);
+      localStorage.setItem(LOGO_CLICK_KEY, "0");
+      router.reload();
       return;
     }
     setClicks(newClicks);

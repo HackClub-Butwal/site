@@ -80,7 +80,7 @@ export default function App({ Component, pageProps }) {
         instagram="@HCButwal"
       />
       <Script
-        src="/scripts/fathom.js"
+        src="/js/fathom.js"
         data-site="NXBJA2"
         strategy="afterInteractive"
         crossOrigin="anonymous"
