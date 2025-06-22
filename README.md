@@ -16,17 +16,7 @@ Start running the website on your computer:
 
     $ yarn dev
 
-The project now uses the following file extensions:
-
-| File Type         | Extensions Used | Location      |
-| ----------------- | --------------- | ------------- |
-| **Pages**         | `.js`           | `pages/`      |
-| **Components**    | `.js`           | `components/` |
-| **API Routes**    | `.js`           | `pages/api/`  |
-| **Utilities**     | `.js`           | `lib/`        |
-| **Config**        | `.json`         | Project root  |
-| **Static Assets** | Various         | `public/`     |
-
+---
 ## Consistency and Best Practices
 
 The project follows Next.js best practices for file extensions:
@@ -41,7 +31,6 @@ Please note: There are a number of redirects and rewrites essential to the websi
 
 Powered by [Next.js] with [MDX], [Theme UI], & [Hack Club Theme].
 
-Code under MIT License, assets may not be re-used or re-distributed.
 
 ---
 
@@ -54,6 +43,8 @@ See something that could be better? Make a PR! Have an easter egg idea? Make a P
 If you need to add content to the site, here's how you can:
 
 <details> <summary>Create a new card</summary>
+
+
 <img width="600" alt="Screenshot 2023-08-16 at 9 09 55 PM" src="https://github.com/hackclub/site/assets/65808924/fed45800-c834-4e4c-ad87-a21e01414fa9">
 
 Most things on the homepage are carousel, modular components that can easily be added and removed according to relevancy to Hack Clubbers. There are 3 main sections: connection, open-source, and IRL community. Most new carousel will likely fall within the first two sections!
@@ -85,15 +76,21 @@ If there's a Hack Club or Hack Club community-led project (past or present) that
 
 </details>
 
-Every week, [thousands of people](https://plausible.io/hackclub.com) visit hackclub.com. What story do you want to tell?
 
-_Have questions? Join us in [#hackclub-site-dev](https://hackclub.slack.com/archives/C036BTDGP43) and to learn more about the style guide at Hack Club check [this](https://hackclub.com/brand/) out_
+Every week, [hundreds of people](https://plausible.io/hackclub.com) visit hackclub.com. What story do you want to tell?
+
+Have questions? Join us in [Discord](https://dsc.gg/butwalhacks) ..
 
 ---
 
-Hack Club Butwal, 2025. MIT License.
+HackClub Butwal, 2025. MIT License.
 
 [next.js]: https://nextjs.org
 [mdx]: https://mdxjs.com
 [theme ui]: https://theme-ui.com
 [hack club theme]: https://theme.hackclub.com
+[hack club]: https://hackclub.com
+[hack club slack]: https://hackclub.com/slack
+
+
+Code under MIT License, assets may not be re-used or re-distributed.

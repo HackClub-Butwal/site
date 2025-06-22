@@ -18,3 +18,5 @@ coverage/
 !/qodana.yaml
 /qodana.sarif.json
 qodana.yaml
+/.lingma/
+
