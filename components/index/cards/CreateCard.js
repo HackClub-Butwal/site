@@ -1,6 +1,6 @@
 import React from 'react'
 import { Box, Heading, Text, Button, Image } from 'theme-ui'
-import Card from '../../Card'
+import Card from '../../index/Card'
 
 export default function CreateCard() {
   return (

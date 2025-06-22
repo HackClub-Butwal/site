@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { Flex, Box, NavLink, Heading, Container } from 'theme-ui'
 import Image from 'next/image'
 import ThemeToggle from '../ThemeToggle'
-import HamburgerMenu from '../HamburgerMenu'
+import HamburgerMenu from './HamburgerMenu'
 import { useRouter } from 'next/router'
 
 const LOGO_CLICK_KEY = 'bin_nav_logo_clicks';

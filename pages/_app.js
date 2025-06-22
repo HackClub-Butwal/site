@@ -1,12 +1,12 @@
 import '@hackclub/theme/fonts/reg-bold.css'
 import Meta from '@hackclub/meta'
-import { ThemeProvider, useColorMode } from 'theme-ui'
+import { ThemeProvider, useColorMode, Container } from 'theme-ui'
 import theme from '../lib/theme'
 import Script from 'next/script'
 import Head from 'next/head'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import BinNav from '../components/bin/nav'
-import Layout from '../components/Layout'
+import Footer from '../components/bin/Footer'
 import '../styles/global.css'
 
 export default function App({ Component, pageProps }) {
@@ -73,9 +73,10 @@ export default function App({ Component, pageProps }) {
       <ThemeProvider theme={theme}>
         <Favicon />
         <BinNav />
-        <Layout>
+        <Container sx={{ py: 4 }}>
           <Component {...pageProps} />
-        </Layout>
+        </Container>
+        <Footer />
       </ThemeProvider>
       <SpeedInsights />
     </>

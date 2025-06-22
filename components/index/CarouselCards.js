@@ -1,6 +1,6 @@
 /** @jsxImportSource theme-ui */
 import { Box, Card, Image, Link, Text } from 'theme-ui'
-import IconComponent from '../icon'
+import Icon from '@hackclub/icons'
 import GitHub from './github'
 
 export default function CarouselCards({
@@ -94,7 +94,7 @@ function renderCard({
           >
             {description}
           </Text>
-          <IconComponent
+          <Icon
             glyph="external"
             size={32}
             color="#E9E9E9"
@@ -123,7 +123,7 @@ function getBoxStyles() {
     transition: 'transform .125s ease-in-out, box-shadow .125s ease-in-out',
     width: ['300px', '300px', '300px'],
     height: ['220px', '220px', '220px'],
-    mx: [2, 3, 4], // add horizontal margin for spacing between cards
+    mx: [2, 3, 4], // add horizontal margin for spacing between carousel
     my: 2, // add vertical margin for spacing
     '@media (max-width: 600px)': {
       width: '480px',

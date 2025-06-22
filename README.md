@@ -59,11 +59,11 @@ If you need to add content to the site, here's how you can:
 <details> <summary>Create a new card</summary>
 <img width="600" alt="Screenshot 2023-08-16 at 9 09 55 PM" src="https://github.com/hackclub/site/assets/65808924/fed45800-c834-4e4c-ad87-a21e01414fa9">
 
-Most things on the homepage are cards, modular components that can easily be added and removed according to relevancy to Hack Clubbers. There are 3 main sections: connection, open-source, and IRL community. Most new cards will likely fall within the first two sections!
+Most things on the homepage are carousel, modular components that can easily be added and removed according to relevancy to Hack Clubbers. There are 3 main sections: connection, open-source, and IRL community. Most new carousel will likely fall within the first two sections!
 
-First, you can create a new file under [components/index/cards](components/index/cards/) with the name of your new event/project. Next add `import CardModel from './card-model'` and add whatever you want :) Finally, use a <Buttons> component (`import Buttons from './button'`) to highlight call-to-action buttons. If it's the main button, use the primary prop to add a background color!
+First, you can create a new file under [components/index/carousel](components/index/cards/) with the name of your new event/project. Next add `import CardModel from './card-model'` and add whatever you want :) Finally, use a <Buttons> component (`import Buttons from './button'`) to highlight call-to-action buttons. If it's the main button, use the primary prop to add a background color!
 
-Your challenge: try and make the card as unique as possible, like a mini poster! Not sure where to start? Look at other cards on the page :)
+Your challenge: try and make the card as unique as possible, like a mini poster! Not sure where to start? Look at other carousel on the page :)
 
 </details>
 

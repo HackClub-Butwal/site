@@ -1,6 +1,2 @@
-import React from 'react'
-import { Heading } from 'theme-ui'
+// This file was removed as it was unused in the project. See project refactor notes for details.
 
-export default function PageTitle({ title }) {
-  return <Heading as="h1" sx={{ mb: 3 }}>{title}</Heading>
-}

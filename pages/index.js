@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Carousel from '../components/index/Carousel'
 import CreateCard from '../components/index/cards/CreateCard'
-import cards from '../components/index/cards/cards'
+import carousel from '../components/index/cards/carousel'
 
 export default function Home() {
   return (
@@ -10,7 +10,7 @@ export default function Home() {
         <title>HackClub Butwal</title>
         <meta name="description" content="HackClub Butwal is launching soon. Stay tuned!" />
       </Head>
-      <Carousel cards={cards} />
+      <Carousel cards={carousel} />
       <CreateCard />
     </div>
   )

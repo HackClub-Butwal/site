@@ -222,6 +222,18 @@ function NavigationWrapper({ isMobile, toggled, baseColor, dark, mobile }) {
   );
 }
 
+function HeaderNavigation({ baseColor, dark, mobile }) {
+  return <NavigationWrapper isMobile={false} baseColor={baseColor} dark={dark} mobile={mobile} />;
+}
+
+function HeaderToggle({ toggleColor, onToggle, toggled }) {
+  return (
+    <ToggleContainer color={toggleColor} onClick={onToggle}>
+      <Icon glyph={toggled ? 'view-close' : 'menu'} />
+    </ToggleContainer>
+  );
+}
+
 function Header({ unfixed, color, bgColor, dark, fixed, ...props }) {
   const { scrolled, toggled, setToggled, mobile } = useHeaderState(unfixed)
   const { baseColor, toggleColor } = computedColors(dark, color, scrolled, toggled)
@@ -239,10 +251,8 @@ function Header({ unfixed, color, bgColor, dark, fixed, ...props }) {
     >
       <Content>
         <LogoLink />
-        <NavigationWrapper isMobile={false} baseColor={baseColor} dark={dark} mobile={mobile} />
-        <ToggleContainer color={toggleColor} onClick={handleToggleMenu}>
-          <Icon glyph={toggled ? 'view-close' : 'menu'} />
-        </ToggleContainer>
+        <HeaderNavigation baseColor={baseColor} dark={dark} mobile={mobile} />
+        <HeaderToggle toggleColor={toggleColor} onToggle={handleToggleMenu} toggled={toggled} />
       </Content>
       <NavigationWrapper isMobile={true} toggled={toggled} baseColor={baseColor} dark={dark} mobile={mobile} />
     </Root>

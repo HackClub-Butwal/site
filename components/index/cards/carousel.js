@@ -1,5 +1,5 @@
-// Example cards data for the animated carousel
-const cards = [
+// Example carousel data for the animated carousel
+const carousel = [
   {
     title: 'Hackathon',
     description: 'Join our upcoming hackathon and collaborate with fellow coders!',
@@ -29,4 +29,4 @@ const cards = [
   }
 ];
 
-export default cards;
+export default carousel;
