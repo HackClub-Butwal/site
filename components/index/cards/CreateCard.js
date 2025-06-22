@@ -1,10 +1,9 @@
 import React from "react";
 import { Box, Heading, Text, Button, Image } from "theme-ui";
-import Card from "../../index/Card";
 
 export default function CreateCard() {
   return (
-    <Card
+    <Box
       sx={{
         background: "linear-gradient(135deg, #ec3750 0%, #1e50a0 100%)",
         color: "white",
@@ -65,6 +64,6 @@ export default function CreateCard() {
           sx={{ width: 96, height: 96 }}
         />
       </Box>
-    </Card>
+    </Box>
   );
 }

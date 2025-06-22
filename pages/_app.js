@@ -15,7 +15,7 @@ export default function App({ Component, pageProps }) {
     const icon =
       colorMode === "dark"
         ? "/assets/logo/blue_logo/Group_336.svg"
-        : "/assets/logo/red_logo/hackclubbutwal.svg";
+        : "/assets/logo/red_logo/rlogo.svg";
     return (
       <Head>
         <link rel="icon" href={icon} />

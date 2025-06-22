@@ -25,7 +25,7 @@ export default function MemberCard({ member }) {
     >
       <Box sx={{ position: "relative", height: 250, overflow: "hidden" }}>
         <Image
-          src={avatar || "/assets/logo/red_logo/Group_337.png"}
+          src={avatar || "/assets/logo/red_logo/rlogo.png"}
           alt={name}
           fill
           style={{

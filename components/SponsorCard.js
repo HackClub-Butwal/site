@@ -56,7 +56,7 @@ export default function SponsorCard({ sponsor }) {
           }}
         >
           <Image
-            src={logo || "/assets/logo/red_logo/Group_337.png"}
+            src={logo || "/assets/logo/red_logo/rlogo.png"}
             alt={`${name} logo`}
             fill
             style={{ objectFit: "contain" }}

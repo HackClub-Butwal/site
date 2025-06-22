@@ -42,7 +42,7 @@ export default function EventCard({ event }) {
     >
       <Box sx={{ position: "relative", height: 200 }}>
         <Image
-          src={image || "/assets/logo/red_logo/Group_337.png"}
+          src={image || "/assets/logo/red_logo/rlogo.png"}
           alt={title}
           fill
           style={{ objectFit: "cover" }}
