@@ -1,18 +1,18 @@
-import {Box, Text} from 'theme-ui'
-import React, {useState} from 'react'
-import CarouselCards from './CarouselCards'
-import Ticker from 'react-ticker'
-import PageVisibility from 'react-page-visibility'
+import {Box, Text} from 'theme-ui';
+import CarouselCards from './CarouselCards';
+import Ticker from 'react-ticker';
+import React, {useState} from 'react';
+import PageVisibility from 'react-page-visibility';
+
 /** @jsxImportSource theme-ui */
 
 export default function Carousel({ cards }) {
-  let [speed, setSpeed] = useState(5)
+  const [speed, setSpeed] = useState(5);
+  const [pageIsVisible, setPageIsVisible] = useState(true);
 
-  const [pageIsVisible, setPageIsVisible] = useState(true)
-
-  const handleVisibilityChange = isVisible => {
-    setPageIsVisible(isVisible)
-  }
+  const handleVisibilityChange = (isVisible) => {
+    setPageIsVisible(isVisible);
+  };
 
   return (
       <PageVisibility onChange={handleVisibilityChange}>
@@ -45,7 +45,7 @@ export default function Carousel({ cards }) {
                 {() => (
                     <Box
                         as="div"
-                        sx={{display: 'flex', py: [4, 5, 5], minWidth: 'max-content'}}
+                        sx={{display: 'flex', py: [4, 5, 5]}}
                         onMouseOver={() => setSpeed(2)}
                         onMouseOut={() => setSpeed(6)}
                     >
@@ -58,5 +58,5 @@ export default function Carousel({ cards }) {
             </Box>
         )}
       </PageVisibility>
-  )
+  );
 }
