@@ -38,7 +38,7 @@ function renderCard({
   link,
 }) {
   return (
-    <Box sx={getBoxStyles()}>
+      <Box sx={{...getBoxStyles(), bg: background}}>
       <Link
         sx={{
           textDecoration: "none",
@@ -64,7 +64,7 @@ function renderCard({
         <Card
           sx={{
             mr: 3,
-            background,
+              bg: "transparent",
             position: "relative",
             color: "white",
             width: "100%", // Match Box width
@@ -96,6 +96,7 @@ function renderCard({
           </Text>
           <Icon
             glyph="external"
+            as="svg"
             size={32}
             color="#E9E9E9"
             sx={{
@@ -120,6 +121,7 @@ function getBoxStyles() {
     flexDirection: "column",
     alignItems: "stretch",
     justifyContent: "flex-start",
+      flexShrink: 0,
     transition: "transform .125s ease-in-out, box-shadow .125s ease-in-out",
     width: ["300px", "300px", "300px"],
     height: ["220px", "220px", "220px"],
