@@ -49,7 +49,9 @@ export default function CarouselCards({
               width: ['42px', '50px', '58px'],
               height: ['42px', '50px', '58px']
           }}>
-              <Image src={img} alt="carousel card" layout="fill" objectFit="cover"/>
+              <Image src={img} alt="carousel card" layout="fill" objectFit="cover" onError={(e) => {
+                  console.error('Image load error for:', img);
+              }}/>
           </Box>
         <Card
           sx={{
