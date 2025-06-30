@@ -1,6 +1,7 @@
 /** @jsxImportSource theme-ui */
 
-import {Box, Card, Image, Link, Text} from 'theme-ui';
+import {Box, Card, Link, Text} from 'theme-ui';
+import Image from 'next/image';
 import Icon from '../icon';
 
 export default function CarouselCards({
@@ -40,18 +41,16 @@ export default function CarouselCards({
         target="_blank"
         rel="noopener"
       >
-        <Image
-          src={img}
-          alt="carousel card"
-          sx={{
+          <Box sx={{
               position: 'absolute',
               top: ['-26px', '-30px', '-35px'],
               left: ['10px', '12px', '15px'],
-            zIndex: 2,
+              zIndex: 2,
               width: ['42px', '50px', '58px'],
-              height: ['42px', '50px', '58px'],
-          }}
-        />
+              height: ['42px', '50px', '58px']
+          }}>
+              <Image src={img} alt="carousel card" layout="fill" objectFit="cover"/>
+          </Box>
         <Card
           sx={{
             mr: 3,
