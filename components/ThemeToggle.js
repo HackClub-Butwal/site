@@ -18,13 +18,13 @@ export default function ThemeToggle() {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        p: 1,
-        borderRadius: "circle",
+          p: 0,
+          borderRadius: 0,
         color: "text",
         border: "none",
         cursor: "pointer",
-        "&:hover": {
-            bg: "transparent",
+          '&:hover': {
+              bg: 'transparent',
           opacity: 0.8,
         },
       }}
