@@ -21,11 +21,10 @@ export default function ThemeToggle() {
         p: 1,
         borderRadius: "circle",
         color: "text",
-        bg: "transparent",
         border: "none",
         cursor: "pointer",
         "&:hover": {
-          bg: "muted",
+            bg: "transparent",
           opacity: 0.8,
         },
       }}
