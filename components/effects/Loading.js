@@ -1,6 +1,6 @@
 import {Box, Text, keyframes} from "theme-ui";
 import React, {useEffect} from "react";
-import logo from "../../public/assets/logo/rlogo.svg";
+import logo from "../../public/bin/logo/rlogo.svg";
 
 /** @jsxImportSource theme-ui */
 
