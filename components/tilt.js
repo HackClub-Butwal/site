@@ -1,12 +1,12 @@
-import React, { useEffect, useRef } from 'react'
-import VanillaTilt from 'vanilla-tilt'
-import useMedia from '../lib/use-media'
+import React, {useEffect, useRef} from "react";
+import VanillaTilt from "vanilla-tilt";
+import useMedia from "../lib/use-media";
 
 // NOTE(@mrbashyal): only pass one child!
 const Tilt = ({ options = {}, children, ...props }) => {
-  const root = useRef(null)
+    const root = useRef(null);
 
-  const { matches: enabled } = useMedia('(hover: hover)')
+    const {matches: enabled} = useMedia("(hover: hover)");
 
   useEffect(() => {
     if (enabled) {
@@ -15,18 +15,17 @@ const Tilt = ({ options = {}, children, ...props }) => {
         scale: 1.05,
         speed: 400,
         glare: true,
-        'max-glare': 0.25,
+          "max-glare": 0.25,
         gyroscope: false,
-        ...options
-      })
+          ...options,
+      });
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    return () => root.current?.vanillaTilt?.destroy()
-  }, [options, enabled])
+      return () => root.current?.vanillaTilt?.destroy();
+  }, [options, enabled]);
 
-  return React.cloneElement(children, { ref: root })
-}
+    return React.cloneElement(children, {ref: root});
+};
 
-export default Tilt
-
+export default Tilt;

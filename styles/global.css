@@ -150,11 +150,11 @@
   }
 
   .hover-underline-red::after {
-    background-image: url('/underline-red.svg');
+      background-image: url("/underline-red.svg");
   }
 
   .hover-underline-green::after {
-    background-image: url('/underline-green.svg');
+      background-image: url("/underline-green.svg");
   }
 
   .hover-underline-red:hover::after,

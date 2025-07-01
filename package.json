@@ -23,7 +23,7 @@
     "lodash": "^4.17.21",
     "next": "^15.3.4",
     "next-transpile-modules": "^10.0.1",
-    "prettier": "^3.5.3",
+    "prettier": "^3.6.2",
     "prop-types": "^15.8.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",

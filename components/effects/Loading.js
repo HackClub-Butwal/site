@@ -1,6 +1,6 @@
-import {Box, Text, keyframes} from 'theme-ui';
-import React, {useEffect} from 'react';
-import logo from '../../public/assets/logo/rlogo.svg';
+import {Box, Text, keyframes} from "theme-ui";
+import React, {useEffect} from "react";
+import logo from "../../public/assets/logo/rlogo.svg";
 
 /** @jsxImportSource theme-ui */
 
@@ -46,12 +46,12 @@ export default function Loading({onAnimationEnd}) {
     return (
         <Box
             sx={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                justifyContent: 'center',
-                height: '100vh',
-                backgroundColor: 'background',
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                height: "100vh",
+                backgroundColor: "background",
                 animation: `${fadeOut} 1s ease-in-out 2s forwards`,
             }}
         >
@@ -60,15 +60,15 @@ export default function Loading({onAnimationEnd}) {
                 alt="HackClub Butwal Logo"
                 style={{
                     animation: `${popUp} 1s ease-in-out`,
-                    width: '100px',
-                    height: '100px',
+                    width: "100px",
+                    height: "100px",
                 }}
             />
             <Text
                 sx={{
                     mt: 3,
                     animation: `${slideIn} 1s ease-in-out 0.5s`,
-                    color: 'text',
+                    color: "text",
                     fontSize: [4, 5, 6],
                 }}
             >

@@ -17,6 +17,7 @@ Start running the website on your computer:
     $ yarn dev
 
 ---
+
 ## Consistency and Best Practices
 
 The project follows Next.js best practices for file extensions:
@@ -31,7 +32,6 @@ Please note: There are a number of redirects and rewrites essential to the websi
 
 Powered by [Next.js] with [MDX], [Theme UI], & [Hack Club Theme].
 
-
 ---
 
 <h1 align="center">Building <a href="https://butwal.hackclub.com/">butwal.hackclub.com</a></h1>
@@ -43,7 +43,6 @@ See something that could be better? Make a PR! Have an easter egg idea? Make a P
 If you need to add content to the site, here's how you can:
 
 <details> <summary>Create a new card</summary>
-
 
 <img width="600" alt="Screenshot 2023-08-16 at 9 09 55 PM" src="https://github.com/hackclub/site/assets/65808924/fed45800-c834-4e4c-ad87-a21e01414fa9">
 
@@ -76,7 +75,6 @@ If there's a Hack Club or Hack Club community-led project (past or present) that
 
 </details>
 
-
 Every week, [hundreds of people](https://plausible.io/hackclub.com) visit hackclub.com. What story do you want to tell?
 
 Have questions? Join us in [Discord](https://dsc.gg/butwalhacks) ..
@@ -91,6 +89,5 @@ HackClub Butwal, 2025. MIT License.
 [hack club theme]: https://theme.hackclub.com
 [hack club]: https://hackclub.com
 [hack club slack]: https://hackclub.com/slack
-
 
 Code under MIT License, assets may not be re-used or re-distributed.

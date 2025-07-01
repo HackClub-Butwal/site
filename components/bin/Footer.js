@@ -146,7 +146,9 @@ const FooterBranding = ({ email }) => (
       <Service href={`mailto:${email}`} icon="email-fill" name="Email" />
     </Grid>
     <Text my={2}>
-        <Link href="tel:1-855-625-HACK" sx={{color: "primary"}}>1-855-625-HACK</Link>
+        <Link href="tel:1-855-625-HACK" sx={{color: "primary"}}>
+            1-855-625-HACK
+        </Link>
       <br />
       <Text as="span" color="muted">
         (call toll-free)
@@ -181,14 +183,17 @@ const Footer = ({
             textDecoration: "none",
               color: "primary",
             transition: "0.125s color ease-in-out",
-              ":hover,:focus": {color: "secondary", textDecoration: "underline"},
+              ":hover,:focus": {
+                  color: "secondary",
+                  textDecoration: "underline",
+              },
           },
           "> div > a": {
             display: "block",
             mb: 2,
           },
-            "h2": {color: dark ? "white" : "text"},
-            "p": {color: "muted"},
+            h2: {color: dark ? "white" : "text"},
+            p: {color: "muted"},
           h2: { fontSize: 3 },
           "a,p": { fontSize: 2 },
         }}
@@ -198,7 +203,8 @@ const Footer = ({
         <FooterBranding email={"hackclubbutwal@duck.com"} />
       </Grid>
         <Text as="p" variant="caption" sx={{mt: 3, color: "muted"}}>
-        © {new Date().getFullYear()} Hack&nbsp;Club. 501(c)(3) nonprofit (EIN:&nbsp;81-2908499)
+            © {new Date().getFullYear()} Hack&nbsp;Club. 501(c)(3) nonprofit
+            (EIN:&nbsp;81-2908499)
       </Text>
         <Text as="p" variant="caption" sx={{mt: 1, color: "muted"}}>
         HackClub&nbsp;Butwal&nbsp;is&nbsp;fiscally&nbsp;sponsored&nbsp;by&nbsp;The&nbsp;Hack&nbsp;Foundation&nbsp;(d.b.a.&nbsp;Hack&nbsp;Club),&nbsp;a&nbsp;501(c)(3)&nbsp;nonprofit&nbsp;(EIN:&nbsp;81-2908499).

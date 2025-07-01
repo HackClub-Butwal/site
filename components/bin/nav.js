@@ -90,9 +90,7 @@ function Logo({ clicks, handleLogoClick, hovered, setHovered, magicActive }) {
       >
         <Image
           src={
-            magicActive
-              ? "/assets/logo/blogo.svg"
-              : "/assets/logo/rlogo.svg"
+              magicActive ? "/assets/logo/blogo.svg" : "/assets/logo/rlogo.svg"
           }
           alt="Site logo"
           width={40}
