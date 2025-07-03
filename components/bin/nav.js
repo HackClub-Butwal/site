@@ -68,6 +68,18 @@ function NavLinks({ direction = "row", onClick }) {
   );
 }
 
+/**
+ * Renders the site logo and heading, changing appearance when the magic feature is active.
+ * 
+ * Displays a clickable logo image and heading text. When `magicActive` is true, both the logo and heading use alternate styles and content. Clicking the logo triggers the provided handler.
+ * 
+ * @param {Object} props
+ * @param {number} props.clicks - The current number of logo clicks.
+ * @param {Function} props.handleLogoClick - Handler for logo click events.
+ * @param {boolean} props.hovered - Hover state for the logo (unused).
+ * @param {Function} props.setHovered - Setter for hover state (unused).
+ * @param {boolean} props.magicActive - Whether the magic feature is active, affecting logo and heading display.
+ */
 function Logo({ clicks, handleLogoClick, hovered, setHovered, magicActive }) {
   return (
     <Flex sx={{ alignItems: "center" }}>
@@ -90,9 +102,7 @@ function Logo({ clicks, handleLogoClick, hovered, setHovered, magicActive }) {
       >
         <Image
           src={
-            magicActive
-              ? "/assets/logo/blogo.svg"
-              : "/assets/logo/rlogo.svg"
+              magicActive ? "/assets/logo/blogo.svg" : "/assets/logo/rlogo.svg"
           }
           alt="Site logo"
           width={40}

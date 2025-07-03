@@ -100,6 +100,9 @@ function HeroHeading() {
   );
 }
 
+/**
+ * Displays a centered, styled tagline announcing the upcoming website launch for young coders and tech enthusiasts in Butwal.
+ */
 function Tagline() {
   return (
     <Text
@@ -114,15 +117,20 @@ function Tagline() {
         lineHeight: "1.5",
         position: "relative",
         zIndex: 1,
+          fontWeight: "medium",
+          textShadow: "0 1px 2px rgba(0,0,0,0.1)",
       }}
     >
-      We’re building something amazing for young coders and Techies in Butwal.
+        We're building something amazing for young coders and Techies in Butwal.
       <br />
       Our website is launching soon. Stay tuned!
     </Text>
   );
 }
 
+/**
+ * Renders a prominently styled button linking to the HackClub Butwal GitHub page.
+ */
 function CTAButton() {
   return (
     <Flex
@@ -134,14 +142,14 @@ function CTAButton() {
         target="_blank"
         rel="noopener noreferrer"
         sx={{
-          bg: "accent",
-          color: "text",
+            bg: "primary",
+            color: "white",
           fontWeight: "bold",
           px: 4,
           py: 3,
           borderRadius: "circle",
           fontSize: [2, 3],
-          boxShadow: "0 4px 12px rgba(0,0,0,0.12)",
+            boxShadow: "0 4px 12px rgba(30,80,160,0.25)",
           transition: "all 0.2s",
           letterSpacing: "0.01em",
           "&:hover": { bg: "secondary", transform: "scale(1.05)" },
@@ -153,14 +161,23 @@ function CTAButton() {
   );
 }
 
+/**
+ * Displays a footer with the current year and HackClub Butwal copyright.
+ */
 function FooterText() {
   return (
     <Text sx={{ fontSize: 1, opacity: 0.7, position: "relative", zIndex: 1 }}>
-      © {new Date().getFullYear()} HackClub Butwal
+        &copy; {new Date().getFullYear()} HackClub Butwal
     </Text>
   );
 }
 
+/**
+ * Renders the animated hero section of the landing page, including branding, heading, tagline, call-to-action button, decorative shapes, and a custom cursor.
+ *
+ * Applies theme-based background and text colors, background flicker animation, and hides the default cursor in favor of a custom cursor after client-side mount.
+ * The section is vertically and horizontally centered, occupying the full viewport height.
+ */
 export default function HeroSection() {
   const [mounted, setMounted] = useState(false);
   useEffect(() => {
@@ -181,8 +198,8 @@ export default function HeroSection() {
     <Box
       sx={{
         minHeight: "100vh",
-        bg: "linear-gradient(135deg, #181B2A 0%, #232946 100%)",
-        color: "white",
+          bg: "background",
+          color: "text",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
@@ -205,7 +222,7 @@ export default function HeroSection() {
           left: 0,
           right: 0,
           bottom: 0,
-          background: "linear-gradient(135deg, #181B2A 0%, #232946 100%)",
+            background: "background",
           animation: "backgroundFlicker 8s ease-in-out infinite",
           zIndex: 0,
         },

@@ -10,6 +10,16 @@ import Footer from "../components/bin/Footer";
 import "../styles/global.css";
 import { Analytics } from "@vercel/analytics/next";
 
+/**
+ * The main application component for the Next.js project, providing global layout, theming, metadata, and analytics.
+ * 
+ * Wraps all pages with a consistent theme, navigation, footer, and meta tags. Dynamically sets the favicon based on the current color mode. Injects global styles and loads analytics scripts.
+ * 
+ * @param {object} props - The component props.
+ * @param {React.ComponentType} props.Component - The active page component to render.
+ * @param {object} props.pageProps - The initial props for the page component.
+ * @return {JSX.Element} The application layout with theming, navigation, and analytics.
+ */
 export default function App({ Component, pageProps }) {
   function Favicon() {
     const [colorMode] = useColorMode();
@@ -21,9 +31,23 @@ export default function App({ Component, pageProps }) {
     return (
       <Head>
         <link rel="icon" href={icon} />
-        <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png" />
+          <link
+              rel="apple-touch-icon"
+              sizes="180x180"
+              href="/assets/favicon/apple-touch-icon.png"
+          />
+          <link
+              rel="icon"
+              type="image/png"
+              sizes="32x32"
+              href="/assets/favicon/favicon-32x32.png"
+          />
+          <link
+              rel="icon"
+              type="image/png"
+              sizes="16x16"
+              href="/assets/favicon/favicon-16x16.png"
+          />
         <link rel="manifest" href="/assets/favicon/site.webmanifest" />
       </Head>
     );
