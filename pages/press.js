@@ -15,7 +15,7 @@ const Page = () => (
             description="Hack Club HQ’s resources for press."
             image="https://workshop-cards.hackclub.com/Press.png?fontSize=350px&brand=HQ"
         />
-        // <ForceTheme theme="light"/>
+        {/* <ForceTheme theme="light"/> */}
         <Nav color="text"/>
         <Box
             as="header"
@@ -57,7 +57,7 @@ const Page = () => (
                     h2: {variant: 'text.headline', mt: 4}
                 }}
             >
-                // <Press/>
+                {/* <Press/> */}
             </Box>
             <Button
                 as="a"

@@ -162,7 +162,7 @@ const Page = () => (
                 variant="ctaLg"
                 href="https://apply.hackclub.com"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
             >
                 Apply now
             </Button>

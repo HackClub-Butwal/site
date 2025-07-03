@@ -51,13 +51,13 @@ export const Logo = ({name}) => (
                 }
             }}
         >
-            <Button as="a" href={`https://assets.hackclub.com/${name}.svg`}>
+            <Button as="a" href={`https://assets.hackclub.com/${name}.svg`} target="_blank" rel="noopener noreferrer">
                 SVG
             </Button>
-            <Button as="a" href={`https://assets.hackclub.com/${name}.png`}>
+            <Button as="a" href={`https://assets.hackclub.com/${name}.png`} target="_blank" rel="noopener noreferrer">
                 PNG
             </Button>
-            <Button as="a" href={`https://assets.hackclub.com/${name}.pdf`}>
+            <Button as="a" href={`https://assets.hackclub.com/${name}.pdf`} target="_blank" rel="noopener noreferrer">
                 PDF
             </Button>
         </Grid>
