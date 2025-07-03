@@ -87,7 +87,5 @@ HackClub Butwal, 2025. MIT License.
 [mdx]: https://mdxjs.com
 [theme ui]: https://theme-ui.com
 [hack club theme]: https://theme.hackclub.com
-[hack club]: https://hackclub.com
-[hack club slack]: https://hackclub.com/slack
 
 Code under MIT License, assets may not be re-used or re-distributed.
