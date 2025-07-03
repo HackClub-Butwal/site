@@ -27,7 +27,7 @@ const WorkshopCard = ({
             lineHeight: 0,
             display: "flex",
             flexDirection: "column",
-            height: "250px",
+            height: "80%",
             "& span": {
                 lineHeight: 1.25,
             },
@@ -57,6 +57,16 @@ const WorkshopCard = ({
     </Card>
 );
 
+/**
+ * Renders the main Workshops section with a title, description, action buttons, and featured workshop cards.
+ *
+ * Displays a responsive layout with information about coding workshops, links to browse or submit workshops, and highlights two featured workshops. The component receives a GitHub star count for display but does not use the `data` prop.
+ *
+ * @param {Object} props
+ * @param {any} props.data - Unused prop, reserved for future data integration.
+ * @param {number} props.stars - The number of GitHub stars to display.
+ * @returns {JSX.Element} The rendered Workshops section.
+ */
 export default function Workshops({ data, stars }) {
     return (
         <CardModel

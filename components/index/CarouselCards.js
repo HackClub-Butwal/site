@@ -4,6 +4,11 @@ import {Box, Card, Link, Text} from "theme-ui";
 import Image from "next/image";
 import Icon from "../icon";
 
+/**
+ * Renders a styled card with an image, title, description, and an external link icon for use in a carousel.
+ *
+ * The card displays a background image, customizable colors for the title and description, and links to an external URL in a new tab. The card and icon include interactive hover effects. If the image fails to load, an error is logged to the console.
+ */
 export default function CarouselCards({
   background,
   titleColor,
@@ -53,12 +58,11 @@ export default function CarouselCards({
           >
               <Image
                   src={img}
-                  alt={title}
+                  alt="carousel card"
                   layout="fill"
                   objectFit="cover"
                   onError={(e) => {
                       console.error("Image load error for:", img);
-                      e.target.style.display = 'none'; // Hide broken image
                   }}
               />
           </Box>

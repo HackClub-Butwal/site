@@ -2,6 +2,11 @@ import React from "react";
 import { useColorMode, Button } from "theme-ui";
 import Icon from "@hackclub/icons";
 
+/**
+ * React component that toggles between light and dark color modes.
+ *
+ * Renders a button that switches the application's color mode when clicked, updating the icon and accessible label to reflect the current mode.
+ */
 export default function ThemeToggle() {
   const [colorMode, setColorMode] = useColorMode();
   const isDark = colorMode === "dark";
@@ -19,7 +24,9 @@ export default function ThemeToggle() {
         alignItems: "center",
         justifyContent: "center",
           p: 0,
+          borderRadius: 0,
         color: "text",
+          border: "none",
         cursor: "pointer",
           '&:hover': {
               bg: 'transparent',

@@ -100,6 +100,9 @@ function HeroHeading() {
   );
 }
 
+/**
+ * Displays a centered, styled tagline announcing the upcoming website launch for young coders and tech enthusiasts in Butwal.
+ */
 function Tagline() {
   return (
     <Text
@@ -125,6 +128,9 @@ function Tagline() {
   );
 }
 
+/**
+ * Renders a prominently styled button linking to the HackClub Butwal GitHub page.
+ */
 function CTAButton() {
   return (
     <Flex
@@ -155,6 +161,9 @@ function CTAButton() {
   );
 }
 
+/**
+ * Displays a footer with the current year and HackClub Butwal copyright.
+ */
 function FooterText() {
   return (
     <Text sx={{ fontSize: 1, opacity: 0.7, position: "relative", zIndex: 1 }}>
@@ -163,6 +172,12 @@ function FooterText() {
   );
 }
 
+/**
+ * Renders the animated hero section of the landing page, including branding, heading, tagline, call-to-action button, decorative shapes, and a custom cursor.
+ *
+ * Applies theme-based background and text colors, background flicker animation, and hides the default cursor in favor of a custom cursor after client-side mount.
+ * The section is vertically and horizontally centered, occupying the full viewport height.
+ */
 export default function HeroSection() {
   const [mounted, setMounted] = useState(false);
   useEffect(() => {

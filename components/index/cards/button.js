@@ -3,6 +3,21 @@ import {Box, Button, Text} from "theme-ui";
 import ReactTooltip from "../../react-tooltip";
 import Icon from "@hackclub/icons";
 
+/**
+ * Renders a styled button with optional icon, tooltip, and link functionality.
+ *
+ * Displays a button or anchor element with customizable appearance, including primary styling, background color override, and stacking order. Supports displaying an icon, tooltip content, and opening a specified link in a new tab. Tooltip content is static and shown on hover.
+ *
+ * @param {React.ReactNode} children - The button label or content.
+ * @param {string} [icon] - Optional icon glyph name to display.
+ * @param {string} [id] - Identifier for associating the tooltip.
+ * @param {React.ReactNode} [content] - Tooltip content to display on hover.
+ * @param {string} [link] - URL to open when the button is clicked.
+ * @param {boolean} [primary] - If true, applies primary button styling.
+ * @param {string} [overrideColor] - Custom background color for the button.
+ * @param {number} [zIndex] - Stacking order for the button container.
+ * @returns {JSX.Element} The rendered button component.
+ */
 export default function Buttons({
   children,
   icon,
@@ -43,6 +58,7 @@ export default function Buttons({
             py: primary ? "12px" : 2,
             width: "fit-content",
             textTransform: "none",
+            fontWeight: "400",
             fontSize: primary ? ["18px", "20px", "22px"] : [1, "16px", "18px"],
             backdropFilter: "blur(2px)",
             fontWeight: fontWeight,

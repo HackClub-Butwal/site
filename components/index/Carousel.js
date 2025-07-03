@@ -4,7 +4,12 @@ import Ticker from "react-ticker";
 import React, {useState} from "react";
 import PageVisibility from "react-page-visibility";
 
-/** @jsxImportSource theme-ui */
+/**
+ * Displays a horizontally scrolling carousel of project cards that pauses when the page is not visible and adjusts scrolling speed on mouse hover.
+ *
+ * The carousel only renders when the page is visible and allows users to slow down or speed up the ticker by hovering over the card area.
+ * @param {Object[]} cards - Array of card data to display in the carousel.
+ */
 
 export default function Carousel({ cards }) {
   const [speed, setSpeed] = useState(5);

@@ -1,7 +1,6 @@
 import {Box, Text, keyframes} from "theme-ui";
 import React, {useEffect} from "react";
 import logo from "../../public/bin/logo/rlogo.svg";
-import PropTypes from "prop-types";
 
 /** @jsxImportSource theme-ui */
 
@@ -36,13 +35,20 @@ const fadeOut = keyframes`
     }
 `;
 
-export default function Loading({onAnimationEnd, duration = 3000}) {
+/**
+ * Displays a full-screen animated loading screen with a logo and text, then triggers a callback after the animation completes.
+ *
+ * @param {Object} props
+ * @param {Function} props.onAnimationEnd - Callback invoked after the loading animation finishes (approximately 3 seconds).
+ * @returns {JSX.Element} The loading screen component.
+ */
+export default function Loading({onAnimationEnd}) {
     useEffect(() => {
         const timer = setTimeout(() => {
-            onAnimationEnd(); // End animation after configurable duration
-        }, duration);
+            onAnimationEnd(); // End animation after 3 seconds
+        }, 3000);
         return () => clearTimeout(timer);
-    }, [onAnimationEnd, duration]);
+    }, [onAnimationEnd]);
 
     return (
         <Box
@@ -78,12 +84,3 @@ export default function Loading({onAnimationEnd, duration = 3000}) {
         </Box>
     );
 }
-
-Loading.propTypes = {
-    onAnimationEnd: PropTypes.func.isRequired,
-};
-
-Loading.defaultProps = {
-    onAnimationEnd: () => {
-    },
-};

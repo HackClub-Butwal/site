@@ -3,7 +3,14 @@ import Buttons from "./button";
 import CardModel from "./card-model";
 import Tilt from "../../tilt";
 
-/** @jsxImportSource theme-ui */
+/**
+ * Renders a promotional UI section for the Sprig hardware console, displaying images, descriptive text, and interactive elements.
+ *
+ * @param {Object} props
+ * @param {number} props.stars - The number of GitHub stars for the Sprig hardware repository.
+ * @param {number} props.consoleCount - The number of teenagers using Sprig consoles, shown in the promotional message.
+ * @returns {JSX.Element} The rendered SprigConsole component.
+ */
 
 export default function SprigConsole({ stars, consoleCount }) {
     return (

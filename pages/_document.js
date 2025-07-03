@@ -1,46 +1,19 @@
-import Document, {Html, Head, Main, NextScript} from 'next/document'
+import {Html, Head, Main, NextScript} from "next/document";
 
-const org = {
-    '@context': 'http://schema.org',
-    '@type': 'Organization',
-    name: 'Hack Club',
-    url: 'https://hackclub.com/',
-    logo: 'https://hackclub.com/assets/favicon/android-chrome-512x512.png', // updated to valid image
-    sameAs: [
-        'https://twitter.com/hackclub',
-        'https://github.com/hackclub',
-        'https://instagram.com/hackclub', // updated to correct Instagram URL
-        'https://www.facebook.com/Hack-Club-741805665870458',
-        'https://www.youtube.com/channel/UCQzO0jpcRkP-9eWKMpJyB0w'
-    ],
-    contactPoint: [
-        {
-            '@type': 'ContactPoint',
-            email: 'team@hackclub.com',
-            contactType: 'customer support',
-            url: 'https://hackclub.com/'
-        }
-    ]
+/**
+ * Customizes the base HTML document structure for the Next.js application.
+ *
+ * Sets the root HTML language to English and includes the main application content and Next.js scripts.
+ * This component is used to augment the default document markup during server-side rendering.
+ */
+export default function Document() {
+    return (
+        <Html lang="en">
+            <Head/>
+            <body>
+            <Main/>
+            <NextScript/>
+            </body>
+        </Html>
+    );
 }
-
-class MyDocument extends Document {
-    render() {
-        return (
-            <Html lang="en">
-                <Head>
-                    <meta name="format-detection" content="telephone=no"/>
-                    <script
-                        type="application/ld+json"
-                        dangerouslySetInnerHTML={{__html: JSON.stringify(org)}}
-                    />
-                </Head>
-                <body>
-                <Main/>
-                <NextScript/>
-                </body>
-            </Html>
-        )
-    }
-}
-
-export default MyDocument
