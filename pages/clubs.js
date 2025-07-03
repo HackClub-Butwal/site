@@ -252,6 +252,8 @@ const Page = () => (
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowFullScreen
                         style={{borderRadius: 12, border: 'hidden'}}
+                        sandbox="allow-scripts allow-same-origin allow-presentation"
+                        referrerPolicy="strict-origin-when-cross-origin"
                     />
                     <Grid
                         columns="auto 1fr"
@@ -541,7 +543,7 @@ const Page = () => (
                 </Grid>
             </Container>
         </Box>
-        // <Slack/>
+        {/* <Slack/> */}
         <Box bg="snow" color="black" py={[5, 6]}>
             <Container sx={{textAlign: ['left', 'center']}}>
                 <Text as="p" variant="eyebrow">
@@ -650,3 +652,4 @@ const Page = () => (
 )
 
 export default Page
+

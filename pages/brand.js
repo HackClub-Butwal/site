@@ -315,6 +315,21 @@ const Page = ({css}) => (
             >
                 CSS Theme on GitHub →
             </Button>
+            <Card
+                as="a"
+                href="https://apply.hackclub.com/"
+                variant="interactive"
+                sx={{
+                    background:
+                        'linear-gradient(32deg, rgba(51, 142, 218, 0.9) 0%, rgba(51, 214, 166, 0.9) 100%)',
+                    color: 'white',
+                    svg: {color: 'rgb(51, 142, 218)'}
+                }}
+            >
+                <Icon glyph="Welcome" size={48} mb={3}/>
+                <Heading as="h3" variant="headline">Apply to Start</Heading>
+                <Text>Submit your application to start a Hack Club.</Text>
+            </Card>
         </Container>
         <Footer/>
     </>
