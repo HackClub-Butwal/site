@@ -242,4 +242,12 @@
     outline: 2px solid var(--primary);
     outline-offset: 2px;
   }
+
+  .hover-underline-red::after,
+  .hover-underline-green::after {
+    /* ...existing underline styles... */
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+  }
 }

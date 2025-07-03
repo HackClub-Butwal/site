@@ -150,7 +150,7 @@ const CardModel = ({
           zIndex: 0,
             filter,
         }}
-        alt=""
+        alt={props.alt || ""}
       />
     )}
     {children}
