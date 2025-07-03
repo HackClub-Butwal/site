@@ -92,7 +92,7 @@ function Logo({ clicks, handleLogoClick, hovered, setHovered, magicActive }) {
           src={
               magicActive ? "/assets/logo/blogo.svg" : "/assets/logo/rlogo.svg"
           }
-          alt="Site logo"
+          alt={magicActive ? "Butwal Hacks logo" : "HackClub Butwal logo"}
           width={40}
           height={40}
         />
