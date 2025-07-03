@@ -53,11 +53,12 @@ export default function CarouselCards({
           >
               <Image
                   src={img}
-                  alt="carousel card"
+                  alt={title}
                   layout="fill"
                   objectFit="cover"
                   onError={(e) => {
                       console.error("Image load error for:", img);
+                      e.target.style.display = 'none'; // Hide broken image
                   }}
               />
           </Box>

@@ -1,5 +1,6 @@
 import {Flex, Text} from "theme-ui";
-import {isEmpty} from "lodash";
+
+const isEmpty = (value) => value == null || value === '' || (Array.isArray(value) && value.length === 0);
 
 const Stat = ({
                   value,

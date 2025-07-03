@@ -36,13 +36,13 @@ const fadeOut = keyframes`
     }
 `;
 
-export default function Loading({onAnimationEnd}) {
+export default function Loading({onAnimationEnd, duration = 3000}) {
     useEffect(() => {
         const timer = setTimeout(() => {
-            onAnimationEnd(); // End animation after 3 seconds
-        }, 3000);
+            onAnimationEnd(); // End animation after configurable duration
+        }, duration);
         return () => clearTimeout(timer);
-    }, [onAnimationEnd]);
+    }, [onAnimationEnd, duration]);
 
     return (
         <Box
