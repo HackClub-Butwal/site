@@ -1,6 +1,7 @@
 import {Box, Text, keyframes} from "theme-ui";
 import React, {useEffect} from "react";
 import logo from "../../public/bin/logo/rlogo.svg";
+import PropTypes from "prop-types";
 
 /** @jsxImportSource theme-ui */
 
@@ -77,3 +78,12 @@ export default function Loading({onAnimationEnd}) {
         </Box>
     );
 }
+
+Loading.propTypes = {
+    onAnimationEnd: PropTypes.func.isRequired,
+};
+
+Loading.defaultProps = {
+    onAnimationEnd: () => {
+    },
+};

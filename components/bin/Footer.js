@@ -192,9 +192,7 @@ const Footer = ({
             display: "block",
             mb: 2,
           },
-            h2: {color: dark ? "white" : "text"},
-            p: {color: "muted"},
-          h2: { fontSize: 3 },
+            h2: {color: dark ? "white" : "text", fontSize: 3},
           "a,p": { fontSize: 2 },
         }}
       >

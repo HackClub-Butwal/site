@@ -43,11 +43,10 @@ export default function Buttons({
             py: primary ? "12px" : 2,
             width: "fit-content",
             textTransform: "none",
-            fontWeight: "400",
             fontSize: primary ? ["18px", "20px", "22px"] : [1, "16px", "18px"],
             backdropFilter: "blur(2px)",
-          fontWeight: fontWeight,
-          zIndex: 999,
+            fontWeight: fontWeight,
+            zIndex: 999,
         }}
         as="a"
         href={link || "/"}

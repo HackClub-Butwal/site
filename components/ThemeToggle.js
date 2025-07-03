@@ -19,9 +19,7 @@ export default function ThemeToggle() {
         alignItems: "center",
         justifyContent: "center",
           p: 0,
-          borderRadius: 0,
         color: "text",
-        border: "none",
         cursor: "pointer",
           '&:hover': {
               bg: 'transparent',

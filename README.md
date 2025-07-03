@@ -77,7 +77,7 @@ If there's a Hack Club or Hack Club community-led project (past or present) that
 
 Every week, [hundreds of people](https://plausible.io/hackclub.com) visit hackclub.com. What story do you want to tell?
 
-Have questions? Join us in [Discord](https://dsc.gg/butwalhacks) ..
+Have questions? Join us in [Discord](https://dsc.gg/butwalhacks)
 
 ---
 

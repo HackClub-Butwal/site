@@ -27,7 +27,7 @@ const WorkshopCard = ({
             lineHeight: 0,
             display: "flex",
             flexDirection: "column",
-            height: "80%",
+            height: "250px",
             "& span": {
                 lineHeight: 1.25,
             },
