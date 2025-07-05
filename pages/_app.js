@@ -1,37 +1,29 @@
-import '@hackclub/theme/fonts/reg-bold.css'
-import Meta from '@hackclub/meta'
-import { ThemeProvider } from 'theme-ui'
-import theme from '../lib/theme'
-import Script from 'next/script'
-import Head from 'next/head'
-import { SpeedInsights } from '@vercel/speed-insights/next'
+import "@hackclub/theme/fonts/reg-bold.css";
+import Meta from "@hackclub/meta";
+import { ThemeProvider, useColorMode, Container } from "theme-ui";
+import theme from "../lib/theme";
+import Script from "next/script";
+import Head from "next/head";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import BinNav from "../components/bin/nav";
+import Footer from "../components/bin/Footer";
+import "../styles/global.css";
+import { Analytics } from "@vercel/analytics/next";
+import {BalancerProvider} from 'react-wrap-balancer';
 
-export default function App({ Component, pageProps }) {
-  return (
-    <>
-      <Head>
-        <link rel="icon" href="/assets/logo/red_logo/hackclubbutwal.svg" />
-      </Head>
-      <Meta
-        as={Head}
-        name="HackClub Butwal"
-        title="HackClub Butwal – Coming Soon"
-        description="Official Hack Club in Butwal, Nepal. Join us for coding, making, and community!"
-        color="#ec3750"
-        image="/assets/logo/red_logo/hackclubbutwal.svg"
-        url="https://butwal.hackclub.com"
-        instagram="@HackClubButwal"
-      />
-      <Script
-        src="/scripts/fathom.js"
-        data-site="NXBJA2"
-        strategy="afterInteractive"
-        crossOrigin="anonymous"
-      />
-      <ThemeProvider theme={theme}>
-        <Component {...pageProps} />
-      </ThemeProvider>
-      <SpeedInsights />
-    </>
-  )
-}
+const App = ({Component, pageProps}) => (
+    <ThemeProvider theme={theme}>
+        <Meta as={Head}>
+            <meta
+                name="google-site-verification"
+                content="7zE7h5foPaxIcnv5Frq6BkcUb9-3UzVc8q3P_cexf9I"
+            />
+        </Meta>
+        <BalancerProvider>
+            <Component {...pageProps} />
+        </BalancerProvider>
+        <Analytics/>
+    </ThemeProvider>
+)
+
+export default App

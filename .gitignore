@@ -10,3 +10,13 @@ dist/
 *.swp
 coverage/
 
+/components/ApiExample.js
+/pages/api-example.js
+/.idea/FILE_EXTENSIONS.md
+/pages/api/hello.js
+/SUMMARY.md
+!/qodana.yaml
+/qodana.sarif.json
+qodana.yaml
+/.lingma/
+.windsurfrules

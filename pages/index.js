@@ -1,29 +1,41 @@
-import { Box, Button, Container, Heading, Text, Flex } from 'theme-ui'
-import Head from 'next/head'
-import Image from 'next/image'
-import DecorativeShapes from '../components/DecorativeShapes'
-import Link from 'next/link'
+import { Box, Button, Container, Heading, Text, Flex } from 'theme-ui';
+import Head from 'next/head';
+import Image from 'next/image';
+import DecorativeShapes from '../components/DecorativeShapes';
+import Link from 'next/link';
+
+import Carousel from "../components/index/Carousel";
+import CreateCard from "../components/index/cards/CreateCard";
+import carouselData from "../lib/carousel.json";
+import SprigConsole from "../components/index/cards/sprig-console";
+import Workshops from "../components/index/cards/workshops";
 
 export default function Home() {
   return (
-    <>
+    <div className="no-drag-select">
       <Head>
-        <title>HackClub Butwal – Launching Soon</title>
-        <meta name="description" content="HackClub Butwal is launching soon. Stay tuned!" />
+        <title>HackClub Butwal</title>
+        <meta
+          name="description"
+          content="HackClub Butwal: Local Club in the corner of Butwal."
+        />
       </Head>
-      <Box sx={{
-        minHeight: '100vh',
-        bg: 'linear-gradient(135deg, #181B2A 0%, #232946 100%)',
-        color: 'white',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        textAlign: 'center',
-        px: 3,
-        position: 'relative',
-        overflow: 'hidden',
-      }}>
+
+      <Box
+        sx={{
+          minHeight: '100vh',
+          bg: 'linear-gradient(135deg, #181B2A 0%, #232946 100%)',
+          color: 'white',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          textAlign: 'center',
+          px: 3,
+          position: 'relative',
+          overflow: 'hidden',
+        }}
+      >
         <DecorativeShapes />
 
         <Box
@@ -52,6 +64,7 @@ export default function Home() {
             priority
           />
         </Box>
+
         <Heading
           as="h1"
           sx={{
@@ -69,6 +82,7 @@ export default function Home() {
         >
           HackClub Butwal
         </Heading>
+
         <Text
           sx={{
             fontSize: [2, 3],
@@ -83,9 +97,11 @@ export default function Home() {
             zIndex: 1,
           }}
         >
-          We’re building something amazing for young coders and Techies in Butwal.<br />
+          We’re building something amazing for young coders and techies in Butwal.
+          <br />
           Our website is launching soon. Stay tuned!
         </Text>
+
         <Flex sx={{ justifyContent: 'center', mb: 4, position: 'relative', zIndex: 1 }}>
           <Link href="/form" passHref legacyBehavior>
             <Button
@@ -101,18 +117,24 @@ export default function Home() {
                 boxShadow: '0 4px 12px rgba(0,0,0,0.12)',
                 transition: 'all 0.2s',
                 letterSpacing: '0.01em',
-                '&:hover': { bg: 'secondary', transform: 'scale(1.05)' }
+                '&:hover': { bg: 'secondary', transform: 'scale(1.05)' },
               }}
             >
               Join The Club
             </Button>
           </Link>
         </Flex>
+
         <Text sx={{ fontSize: 1, opacity: 0.7, position: 'relative', zIndex: 1 }}>
           © {new Date().getFullYear()} HackClub Butwal
         </Text>
       </Box>
-    </>
-  )
-}
 
+      <Container sx={{ py: 5 }}>
+        <Carousel cards={carouselData} />
+        <SprigConsole stars={0} consoleCount={0} />
+        <Workshops />
+      </Container>
+    </div>
+  );
+}
