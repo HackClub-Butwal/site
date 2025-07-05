@@ -2,6 +2,7 @@ import { Box, Button, Container, Heading, Text, Flex } from 'theme-ui'
 import Head from 'next/head'
 import Image from 'next/image'
 import DecorativeShapes from '../components/DecorativeShapes'
+import Link from 'next/link'
 
 export default function Home() {
   return (
@@ -86,27 +87,26 @@ export default function Home() {
           Our website is launching soon. Stay tuned!
         </Text>
         <Flex sx={{ justifyContent: 'center', mb: 4, position: 'relative', zIndex: 1 }}>
-          <Button
-            as="a"
-            href="https://github.com/HackClub-Butwal"
-            target="_blank"
-            rel="noopener noreferrer"
-            sx={{
-              bg: 'accent',
-              color: 'white',
-              fontWeight: 'bold',
-              px: 4,
-              py: 3,
-              borderRadius: 'circle',
-              fontSize: [2, 3],
-              boxShadow: '0 4px 12px rgba(0,0,0,0.12)',
-              transition: 'all 0.2s',
-              letterSpacing: '0.01em',
-              '&:hover': { bg: 'secondary', transform: 'scale(1.05)' }
-            }}
-          >
-            Visit our GitHub
-          </Button>
+          <Link href="/form" passHref legacyBehavior>
+            <Button
+              as="a"
+              sx={{
+                bg: 'accent',
+                color: 'white',
+                fontWeight: 'bold',
+                px: 4,
+                py: 3,
+                borderRadius: 'circle',
+                fontSize: [2, 3],
+                boxShadow: '0 4px 12px rgba(0,0,0,0.12)',
+                transition: 'all 0.2s',
+                letterSpacing: '0.01em',
+                '&:hover': { bg: 'secondary', transform: 'scale(1.05)' }
+              }}
+            >
+              Join The Club
+            </Button>
+          </Link>
         </Flex>
         <Text sx={{ fontSize: 1, opacity: 0.7, position: 'relative', zIndex: 1 }}>
           © {new Date().getFullYear()} HackClub Butwal
@@ -115,3 +115,4 @@ export default function Home() {
     </>
   )
 }
+

@@ -2,6 +2,29 @@
 
 This project is the placeholder for the official Hack Club Butwal website. Stay tuned for updates!
 
+## Routing
+
+This Next.js application uses file-based routing. The main routes are:
+
+- `/` - Home page
+- `/form` - Registration form (embedded Tally form)
+
+### Legacy Redirects
+
+The application handles legacy redirects for:
+- `/form/form.html` → `/form` (automatically redirected)
+- Any `.html` files → corresponding routes without extension
+
+## Deployment
+
+This project is configured for static export and can be deployed to:
+
+- **GitHub Pages** (recommended) - Automatic deployment via GitHub Actions
+- **Vercel** - Zero-config deployment
+- **Netlify** - Static site hosting
+
+The project exports to static HTML files in the `out/` directory for compatibility with static hosting providers.
+
 ---
 # Hack Club Theme Starter
 
