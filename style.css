@@ -26,8 +26,8 @@ html {
 }
 
 body {
-  font-family: "Phantom Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, Helvetica, Arial, sans-serif;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
   line-height: 1.6;
   color: var(--hack-dark);
   background-color: var(--hack-white);
