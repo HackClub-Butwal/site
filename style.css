@@ -182,6 +182,20 @@ img {
   display: none;
   cursor: pointer;
   font-size: 1.5rem;
+  /* Button reset styles for accessibility */
+  background: none;
+  border: none;
+  padding: 8px;
+  color: inherit;
+  font-family: inherit;
+}
+
+/* Focus styles for keyboard accessibility */
+.fa-bars:focus,
+.fa-times:focus {
+  outline: 2px solid var(--hack-red);
+  outline-offset: 2px;
+  border-radius: 4px;
 }
 #closeMenu {
   display: none;

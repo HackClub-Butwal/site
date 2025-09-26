@@ -33,8 +33,13 @@
             Club Butwal</a
           >
         </div>
-        <div class="nav-links" id="navLinks">
-          <i class="fas fa-times" id="closeMenu"></i>
+        <div class="nav-links" id="navLinks" aria-hidden="true">
+          <button
+            type="button"
+            class="fas fa-times"
+            id="closeMenu"
+            aria-label="Close menu"
+          ></button>
           <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
@@ -43,7 +48,13 @@
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
-        <i class="fas fa-bars" id="menuIcon"></i>
+        <button
+          type="button"
+          class="fas fa-bars"
+          id="menuIcon"
+          aria-label="Open menu"
+          aria-expanded="false"
+        ></button>
       </div>
     </nav>
 

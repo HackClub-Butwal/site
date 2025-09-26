@@ -5,21 +5,37 @@ document.addEventListener("DOMContentLoaded", function () {
   const navLinks = document.getElementById("navLinks");
   const navItems = document.querySelectorAll(".nav-links ul li a");
 
+  // Helper function to close the mobile menu
+  function closeMobileMenu() {
+    navLinks.classList.remove("active");
+    menuIcon.setAttribute("aria-expanded", "false");
+    navLinks.setAttribute("aria-hidden", "true");
+  }
+
   // Open mobile menu
   menuIcon.addEventListener("click", function () {
     navLinks.classList.add("active");
+    menuIcon.setAttribute("aria-expanded", "true");
+    navLinks.setAttribute("aria-hidden", "false");
   });
 
   // Close mobile menu
   closeMenu.addEventListener("click", function () {
-    navLinks.classList.remove("active");
+    closeMobileMenu();
   });
 
   // Close mobile menu when clicking on a nav item
   navItems.forEach((item) => {
     item.addEventListener("click", function () {
-      navLinks.classList.remove("active");
+      closeMobileMenu();
     });
+  });
+
+  // Close mobile menu when pressing Escape key
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && navLinks.classList.contains("active")) {
+      closeMobileMenu();
+    }
   });
 
   // Initialize Owl Carousel for events
