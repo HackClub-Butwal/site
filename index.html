@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./Assets/logo.png" />
+    <title>Hack Club Butwal</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+      integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+      integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="container">
+        <div class="logo">
+          <a href="#"
+            ><img src="./Assets/logo.png" alt="Hack Club Butwal Logo" /> Hack
+            Club Butwal</a
+          >
+        </div>
+        <div class="nav-links" id="navLinks" aria-hidden="true">
+          <button
+            type="button"
+            class="fas fa-times"
+            id="closeMenu"
+            aria-label="Close menu"
+          ></button>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#team">Team</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <button
+          type="button"
+          class="fas fa-bars"
+          id="menuIcon"
+          aria-label="Open menu"
+          aria-expanded="false"
+        ></button>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content">
+          <h1>Welcome to <span class="hack-red">Hack Club</span> Butwal</h1>
+          <p>Club of Teenagers, Led by Teenagers in Butwal, Nepal</p>
+          <div class="cta-buttons">
+            <a href="#about" class="btn btn-primary">Learn More</a>
+            <a href="#contact" class="btn btn-outline">Join Us</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="./Assets/friends.jpg" alt="Hack Club Orpheus Flag" />
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+      <div class="container">
+        <h2 class="section-title">
+          About <span class="hack-red">Hack Club</span> Butwal
+        </h2>
+        <div class="about-content">
+          <div class="about-text">
+            <p>
+              Hack Club Butwal is a student-led coding club affiliated with the
+              international Hack Club network. We're on a mission to foster
+              coding culture among high school and college students in Butwal,
+              Nepal.
+            </p>
+            <p>
+              Through workshops, events, and community activities, we empower
+              students to build projects, learn new technologies, and
+              collaborate with like-minded peers.
+            </p>
+            <p>
+              Join us to learn, build, and share your creative ideas in a
+              supportive community!
+            </p>
+          </div>
+          <div class="about-stats">
+            <div class="stat">
+              <h3>40+</h3>
+              <p>Members</p>
+            </div>
+            <div class="stat">
+              <h3>10+</h3>
+              <p>Events</p>
+            </div>
+            <div class="stat">
+              <h3>5+</h3>
+              <p>Projects</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Events Section with Owl Carousel -->
+    <section class="events" id="events">
+      <div class="container">
+        <h2 class="section-title">Our <span class="hack-red">Events</span></h2>
+        <div class="owl-carousel event-carousel owl-theme">
+          <div class="event-item">
+            <div class="event-card">
+              <div class="event-image">
+                <img src="./Assets/meeting.jpg" alt="meeting" />
+              </div>
+              <div class="event-content">
+                <h3>First Meet</h3>
+                <p class="event-date">May 2025</p>
+                <p>
+                  First Meet of Hack Club Butwal where members introduced
+                  themselves and discussed future plans.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="event-item">
+            <div class="event-card">
+              <div class="event-image">
+                <img src="./Assets/git-github.jpg" alt="Event" />
+              </div>
+              <div class="event-content">
+                <h3>Git and GitHub Workshop</h3>
+                <p class="event-date">June 2025</p>
+                <p>
+                  A workshop on Git and GitHub to help members understand
+                  version control and collaboration.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="event-item">
+            <div class="event-card">
+              <div class="event-image">
+                <img src="./Assets/boba-drops.jpg" alt="Event" />
+              </div>
+              <div class="event-content">
+                <h3>BOBA Drops</h3>
+                <p class="event-date">September 2025</p>
+                <p>
+                  BOBA Drops event where we built sites using HTML and CSS and
+                  deployed them on GitHub. Then got some boba to celebrate!
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="event-item">
+            <div class="event-card">
+              <div class="event-image">
+                <img src="./Assets/app-development.jpg" alt="Event" />
+              </div>
+              <div class="event-content">
+                <h3>APP Dev Workshop</h3>
+                <p class="event-date">July 2025</p>
+                <p>
+                  A workshop on APP Development to help members understand
+                  mobile app design and development.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team" id="team">
+      <div class="container">
+        <h2 class="section-title">Our <span class="hack-red">Team</span></h2>
+        <div class="team-members">
+          <div class="team-member">
+            <div class="member-image">
+              <img src="./BOD/eventlead.jpg" alt="Prarambha Bashyal" />
+            </div>
+            <h3>Prarambha Bashyal</h3>
+            <p class="member-role">Lead</p>
+            <div class="social-links">
+              <a href="https://github.com/Prarambha369" target="_blank"
+                ><i class="fab fa-github"></i
+              ></a>
+              <a href="https://x.com/MisterBashyal" target="_blank"
+                ><i class="fab fa-twitter"></i
+              ></a>
+            </div>
+          </div>
+          <div class="team-member">
+            <div class="member-image">
+              <img src="./BOD/leader.jpg" alt="Prasoon Kandel" />
+            </div>
+            <h3>Prasoon Kandel</h3>
+            <p class="member-role">Co-Lead</p>
+            <div class="social-links">
+              <a href="https://github.com/prasoonkandel" target="_blank"
+                ><i class="fab fa-github"></i
+              ></a>
+              <a href="https://x.com/PrasoonKandel" target="_blank"
+                ><i class="fab fa-twitter"></i
+              ></a>
+            </div>
+          </div>
+          <div class="team-member">
+            <div class="member-image">
+              <img src="./BOD/sujal.jpg" alt="Sujal Dhungana" />
+            </div>
+            <h3>Sujal Dhungana</h3>
+            <p class="member-role">Co-Lead</p>
+            <div class="social-links">
+              <a href="https://github.com/Sujal-Dhungana" target="_blank"
+                ><i class="fab fa-github"></i
+              ></a>
+              <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+
+          <div class="team-member">
+            <div class="member-image">
+              <img src="./BOD/prashanta.jpg" alt="Prashant Bhusal" />
+            </div>
+            <h3>Prashanta Bhusal</h3>
+            <p class="member-role">Treasurer</p>
+            <div class="social-links">
+              <a href="https://github.com/prashanta065" target="_blank"
+                ><i class="fab fa-github"></i
+              ></a>
+
+              <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <h2 class="section-title">
+          Get in <span class="hack-red">Touch</span>
+        </h2>
+        <div class="contact-content">
+          <div class="contact-info">
+            <div class="contact-items">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="contact-details">
+                <p>hcbutwal@gmail.com</p>
+                <p>Butwal, Nepal</p>
+              </div>
+            </div>
+            <div class="social-links">
+              <a href="https://www.instagram.com/hcbutwal/" target="_blank"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="https://discord.gg/fRDaaGGJ" target="_blank"
+                ><i class="fab fa-discord"></i
+              ></a>
+              <a href="https://github.com/HackClub-Butwal" target="_blank"
+                ><i class="fab fa-github"></i
+              ></a>
+            </div>
+            <img src="./Assets/left.png" alt="" />
+          </div>
+          <div class="contact-form">
+            <form action="#" method="POST">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <img
+              src="https://assets.hackclub.com/flag-orpheus-top.svg"
+              alt="Hack Club Butwal Logo"
+            />
+            <p>Hack Club Butwal</p>
+          </div>
+          <div class="footer-links">
+            <div class="footer-column">
+              <h3>Resources</h3>
+              <ul>
+                <li>
+                  <a href="https://hackclub.com" target="_blank">Hack Club</a>
+                </li>
+                <li>
+                  <a href="https://workshops.hackclub.com" target="_blank"
+                    >Workshops</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://hackclub.slack.com/archives/C08TFQJ4TL7"
+                    target="_blank"
+                    >Join Slack</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2024 Hack Club Butwal. All rights reserved.</p>
+          <p>Made with <span class="hack-red">❤</span> by hcbutwal members.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+      integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>
